@@ -51,21 +51,43 @@ Dzięki wykorzystaniu tych pakietów możliwe było zrealizowanie nie tylko bezp
 
 <div class="page"/>
 
+Dodatkowe narzędzia i paczki użyte przy tworzeniu strony serwerowej:
+
+- Curl
+- Postman
+- MQTT Explorer
+- PostgreSQL Explorer
+- [github.com/charmbracelet/lipgloss](https://github.com/charmbracelet/lipgloss)
+- [github.com/didip/tollbooth](https://github.com/didip/tollbooth)
+- [github.com/gin-contrib/cors](https://github.com/gin-contrib/cors)
+- [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin)
+- [github.com/golang-jwt/jwt/v5](https://github.com/golang-jwt/jwt)
+- [github.com/hashicorp/mdns](https://github.com/hashicorp/mdns)
+- [github.com/joho/godotenv](https://github.com/joho/godotenv)
+- [github.com/spf13/viper](https://github.com/spf13/viper)
+- [golang.org/x/crypto](https://pkg.go.dev/golang.org/x/crypto)
+- [gorm.io/gorm](https://gorm.io/gorm)
+
+<div class="page"/>
+
 ### 4.2 Frontend - strona użytkownika
 
 Aplikacja internetowa w całości oparta została na frameworku ***Vue.js* w wersji 3**. Dzięki zastosowaniu tej technologii aplikacja pod względem wydajnościowym wyraźnie wyprzedza inne projekty, które z domysłu oparte są o statyczne strony internetowe.
 
 Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak framework ***Vue.js* w wersji 3**, ***Vite* w wersji 5.2.2** jako narzędzie do budowania projektu w jedna spójną całość gotową do uruchomienia, oraz Vuetify, biblioteki komponentów ***Material Design***. W połączeniu z biblioteką ***Pinia* w wersji 2.1.7** do zarządzania stanem aplikacji oraz ***Axios* w wersji 1.6.7** do komunikacji z serwerem, te technologie pozwoliły nam na stworzenie wyjątkowo wydajnej aplikacji jednostronowej **SPA (Single Page Application)**. Vue.js umożliwia dynamiczne routowanie po stronie użytkownika, eliminując jednocześnie konieczność przeładowywania całej strony podczas przejść miedzy różnymi widokami, co poprawia doświadczenie i komfort użytkownika. Pinia wraz z Axios zapewniają bezpieczną i wydajną komunikację z serwerem, a wykorzystanie komponentów z Vuetify ułatwiło stworzenie interfejsu użytkownika zgodnego ze standardem Material Design. Dzięki temu, architektura kodu aplikacji staje się bardziej przejrzysta i skalowalna, co znacznie ułatwia rozwój aplikacji o nowe funkcjonalności.
 
+<div style="display:flex; justify-content:center;">
+  <div style="flex:1; text-align:center;">
+    <h2>Przykładowy komponent</h2>
+    <img src="../static/frontend_sample_component.png" alt="Komponent" style="max-width:65%; max-height:65%; border-radius: 16px;">
+  </div>
+</div>
+
 <div class="page"/>
 
-<div style="display:flex">
-  <div style="flex:1">
-    <h2 align="center">Struktura plików frontendu</h2>
-    <img src="../static/frontend_structure.png" alt="Struktura" style="max-width:80%; max-height:80%; border-radius: 16px;">
-  </div>
-  <div style="flex:1">
-    <h2 align="center">Przykładowy komponent</h2>
-    <img src="../static/frontend_sample_component.png" alt="Komponent" style="width:90%; max-height:90%; border-radius: 16px;">
+<div style="display:flex; justify-content:center;">
+  <div style="flex:1; text-align:center;">
+    <h2>Struktura plików frontendu</h2>
+    <img src="../static/frontend_structure.png" alt="Struktura" style="max-width:75%; max-height:75%; border-radius: 16px;">
   </div>
 </div>

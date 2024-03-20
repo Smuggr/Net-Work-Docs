@@ -1,18 +1,28 @@
 <!-- markdownlint-disable MD033 -->
 
-# Spis Treści
+# Spis Treści <!-- omit in toc -->
+
+- [1. Wstęp](#1-wstęp)
+- [2. Cele i założenia](#2-cele-i-założenia)
+- [3. Przebieg pracy](#3-przebieg-pracy)
+- [4. Część Informatyczna](#4-część-informatyczna)
+  - [4.1 Backend - strona serwerowa](#41-backend---strona-serwerowa)
+  - [4.2 Frontend - strona użytkownika](#42-frontend---strona-użytkownika)
+
+
+<div class="page"/>
 
 ## 1. Wstęp
 
-<div style="page-break-before: always;"></div>
+<div class="page"/>
 
 ## 2. Cele i założenia
 
-<div style="page-break-before: always;"></div>
+<div class="page"/>
 
 ## 3. Przebieg pracy
 
-<div style="page-break-before: always;"></div>
+<div class="page"/>
 
 ## 4. Część Informatyczna
 
@@ -20,14 +30,14 @@ Jedną z najważniejszych zalet **Net-Worku** jest jego infrastruktura informaty
 
 Komunikacja w oprogramowaniu opiera się na protokołach ***Message Queuing Telemetry Transport*** **(MQTT) w wersji 3.11** oraz ***Represantional State Transfer*** **(REST)**, oba są przydatne w różnych kontekstach komunikacyjnych. Protokół MQTT został wykorzystany ze względu na jego lekkość i efektywność, co czyni go idealnym rozwiązaniem dla aplikacji związanych z **Internetem Rzeczy (IoT)** oraz systemów o niskich wymaganiach zasobowych. Dzięki modelowi publikacji i subskrypcji **(PUBSUB)**, MQTT umożliwia efektywną wymianę danych między urządzeniami w czasie rzeczywistym. Z kolei architektura REST stanowi uniwersalny interfejs komunikacyjny, który pozwala na zarządzanie zasobami w sposób zrozumiały dla ludzi oraz maszyn. Wykorzystanie tych protokołów pozwala na elastyczne i skalowalne budowanie aplikacji, które są w stanie efektywnie komunikować się z różnymi systemami i urządzeniami.
 
-<div style="page-break-before: always;"></div>
+<div class="page"/>
 
 ### 4.1 Backend - strona serwerowa
 
 W celu zbudowania bezpiecznego oraz wydajnego serwera REST i brokera MQTT, wykorzystane zostały następujące pakiety języka Go:
 
-- [GIN](https://github.com/gin-gonic/gin/releases/tag/v1.9.1) wersja 1.9.1
-- [COMQTT](https://github.com/wind-c/comqtt/releases/tag/v2.5.4) wersja 2.5.4
+- ***GIN* wersja 1.9.1**
+- ***COMQTT* wersja 2.5.4**
 
 Technologie te pozwalają na bezpośrednią integracje obu protokołów komunikacyjnych w jednej bazie kodu. W przypadku pakietu GIN dodatkowe możliwości wprowadzania **middleware'ów** (programów pośrednich między żądaniem a właściwą częścią aplikacji) pozwoliły na proste wbudowanie dodatkowych zabezpieczeń dostępu do serwera REST, takie jak:
 
@@ -39,7 +49,7 @@ Natomiast pakiet COMQTT zapewnia nie tylko implementację protokołu MQTT, ale r
 
 Dzięki wykorzystaniu tych pakietów możliwe było zrealizowanie nie tylko bezpiecznego, ale także wydajnego serwera REST oraz brokera MQTT, który spełnia wymagania zarówno pod kątem funkcjonalności, jak i wydajności.
 
-<div style="page-break-before: always;"></div>
+<div class="page"/>
 
 ### 4.2 Frontend - strona użytkownika
 
@@ -47,7 +57,7 @@ Aplikacja internetowa w całości oparta została na frameworku ***Vue.js* w wer
 
 Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak framework ***Vue.js* w wersji 3**, ***Vite* w wersji 5.2.2** jako narzędzie do budowania projektu w jedna spójną całość gotową do uruchomienia, oraz Vuetify, biblioteki komponentów ***Material Design***. W połączeniu z biblioteką ***Pinia* w wersji 2.1.7** do zarządzania stanem aplikacji oraz ***Axios* w wersji 1.6.7** do komunikacji z serwerem, te technologie pozwoliły nam na stworzenie wyjątkowo wydajnej aplikacji jednostronowej **SPA (Single Page Application)**. Vue.js umożliwia dynamiczne routowanie po stronie użytkownika, eliminując jednocześnie konieczność przeładowywania całej strony podczas przejść miedzy różnymi widokami, co poprawia doświadczenie i komfort użytkownika. Pinia wraz z Axios zapewniają bezpieczną i wydajną komunikację z serwerem, a wykorzystanie komponentów z Vuetify ułatwiło stworzenie interfejsu użytkownika zgodnego ze standardem Material Design. Dzięki temu, architektura kodu aplikacji staje się bardziej przejrzysta i skalowalna, co znacznie ułatwia rozwój aplikacji o nowe funkcjonalności.
 
-<div style="page-break-before: always;"></div>
+<div class="page"/>
 
 <div style="display:flex">
   <div style="flex:1">

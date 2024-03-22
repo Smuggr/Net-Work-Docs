@@ -5,26 +5,20 @@
 - [1. Wstęp](#1-wstęp)
 - [2. Cele i założenia](#2-cele-i-założenia)
 - [3. Przebieg pracy](#3-przebieg-pracy)
-- [4. Część Informatyczna](#4-część-informatyczna)
+- [4. Część informatyczna](#4-część-informatyczna)
 - [4.1. Backend - strona serwerowa](#41-backend---strona-serwerowa)
 - [4.2. Frontend - strona użytkownika](#42-frontend---strona-użytkownika)
-- [4.3. Wygląd Aplikacji](#43-wygląd-aplikacji)
-
-<div class="page"/>
+- [4.3. Wygląd aplikacji](#43-wygląd-aplikacji)
+- [4.4. Prototypowy wygląd urządzenia](#44-prototypowy-wygląd-urządzenia)
+- [4.5. Finalny wygląd urządzenia](#45-finalny-wygląd-urządzenia)
 
 ## 1. Wstęp
 
-<div class="page"/>
-
 ## 2. Cele i założenia
-
-<div class="page"/>
 
 ## 3. Przebieg pracy
 
-<div class="page"/>
-
-## 4. Część Informatyczna
+## 4. Część informatyczna
 
 Jedną z najważniejszych zalet **Net-Worku** jest jego infrastruktura informatyczna. W celu zbudowania funkcjonującego systemu wykorzystane zostały najnowsze frameworki oraz języki programowania. Samo oprogramowanie zostało napisane w kilku językach, strona serwerowa została napisana w języku ***Go***, natomiast strona użytkownika została napisana w języku ***JavaScript*** wraz z frameworkiem ***Vue.js*** i komponentami w najnowszym standardzie material, ***Vuetify***, do automatyzacji kompilacji i uruchamiania oprogramowania został wykorzystany ***Make*** oraz ***Bash***.
 
@@ -78,42 +72,159 @@ Aplikacja internetowa w całości oparta została na frameworku ***Vue.js* 3**. 
 
 Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak framework ***Vue.js* 3**, ***Vite* 5.2.2** jako narzędzie do budowania projektu w jedna spójną całość gotową do uruchomienia, oraz ***Vuetify***, biblioteki komponentów **Material Design**. W połączeniu z biblioteką ***Pinia* 2.1.7** do zarządzania stanem aplikacji oraz ***Axios* 1.6.7** do komunikacji z serwerem, te technologie pozwoliły nam na stworzenie wyjątkowo wydajnej aplikacji jednostronowej **SPA (Single Page Application)**. **Vue.js** umożliwia dynamiczne routowanie po stronie użytkownika, eliminując jednocześnie konieczność przeładowywania całej strony podczas przejść miedzy różnymi widokami, co poprawia doświadczenie i komfort użytkownika. **Pinia** wraz z **Axios** zapewniają bezpieczną i wydajną komunikację z serwerem, a wykorzystanie komponentów z **Vuetify** ułatwiło stworzenie interfejsu użytkownika zgodnego ze standardem **Material Design**. Dzięki temu, architektura kodu aplikacji staje się bardziej przejrzysta i skalowalna, co znacznie ułatwia rozwój aplikacji o nowe funkcjonalności.
 
-<div style="display:flex; justify-content:center;">
-  <div style="flex:1; text-align:center;">
+<div class="container">
+  <div class="content-compact">
     <h3>Przykładowy komponent</h3>
-    <img src="../static/frontend_sample_component.png" alt="Komponent" style="max-width:65%; max-height:65%; border-radius: 16px;">
+    <img src="../static/frontend_sample_component.png" alt="Komponent">
   </div>
 </div>
 
-<div class="page"/>
+<div class="page"></div>
 
-<div style="display:flex; justify-content:center;">
-  <div style="flex:1; text-align:center;">
+<div class="container">
+  <div class="content">
     <h3>Struktura plików frontendu</h3>
-    <img src="../static/frontend_structure.png" alt="Struktura" style="max-width:75%; max-height:75%; border-radius: 16px;">
+    <img src="../static/frontend_structure.png" alt="Struktura">
   </div>
 </div>
 
 <div class="page"/>
 
-## 4.3. Wygląd Aplikacji
+## 4.3. Wygląd aplikacji
 
-<div style="flex:1; text-align:center;">
-  <h3>Strona główna przed zalogowaniem</h3>
-  <img src="../static/frontend_not_logged_in.png" alt="Nie zalogowany" style="max-width:65%; max-height:65%; border-radius: 16px;">
+<div class="container">
+  <div class="content">
+    <h3>Strona główna przed zalogowaniem</h3>
+    <img src="../static/frontend_not_logged_in.png" alt="Nie zalogowany">
+  </div>
 </div>
 
-<div style="flex:1; text-align:center;">
-  <h3>Okno logowania</h3>
-  <img src="../static/frontend_login_screen.png" alt="Okno logowania" style="max-width:65%; max-height:65%; border-radius: 16px;">
+<div class="container">
+  <div class="content">
+    <h3>Okno logowania</h3>
+    <img src="../static/frontend_login_screen.png" alt="Okno logowania">
+  </div>
 </div>
 
-<div style="flex:1; text-align:center;">
-  <h3>Demonstracja weryfikacji danych</h3>
-  <img src="../static/frontend_login_screen_validation.png" alt="Weryfikacja danych" style="max-width:65%; max-height:65%; border-radius: 16px;">
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Demonstracja weryfikacji danych</h3>
+    <img src="../static/frontend_login_screen_validation.png" alt="Weryfikacja danych">
+  </div>
 </div>
 
-<div style="flex:1; text-align:center;">
-  <h3>Demonstracja weryfikacji danych</h3>
-  <img src="../static/frontend_login_screen_validation.png" alt="Komponent" style="max-width:65%; max-height:65%; border-radius: 16px;">
+<div class="container">
+  <div class="content">
+    <h3>Demonstracja weryfikacji danych</h3>
+    <img src="../static/frontend_login_screen_validation.png" alt="Demonstracja weryfikacji danych">
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+    <h3>Strona główna po zalogowaniu</h3>
+    <img src="../static/frontend_home_page.png" alt="Strona główna">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Profil zalogowanego użytkownika</h3>
+    <img src="../static/frontend_login_screen.png" alt="Profil użytkownika">
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+    <h3>Strona "O stronie"</h3>
+    <img src="../static/frontend_about_page.png" alt="O stronie">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Panel z urządzeniami</h3>
+    <img src="../static/frontend_dashboard_page_devices.png" alt="Urządzenia">
+  </div>
+</div>
+
+<div class="page"/>
+
+## 4.4. Prototypowy wygląd urządzenia
+
+<div class="container">
+  <div class="content">
+    <h3>Prototyp PCB</h3>
+    <img src="../static/prototype_top.jpg" alt="Prototyp PCB">
+  </div>
+</div>
+
+<div class="container-left">
+  <div class="content">
+    <h3>1. Przekaźnik mechaniczy wraz z układem</h3>
+    <h3>2. Konwerter poziomów logicznych</h3>
+    <h3>3. Zasilanie 5V oraz 3.3V</h3>
+    <h3>4. Linie I2C 5V oraz 3.3V</h3>
+    <h3>5. Złącza śrubowe</h3>
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <img src="../static/prototype_bottom.jpg" alt="Prototyp PCB">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Prototypowe złożenie niektórych elementów</h3>
+    <img src="../static/schedule_keepr_prototype_assembly.jpg" alt="Prototypowe złożenie">
+  </div>
+</div>
+
+<div class="container-left">
+  <div class="content">
+    <h3>1. Prototyp PCB</h3>
+    <h3>2. Raspberry Pi Zero W 2</h3>
+    <h3>3. Wyświetlacz LCD</h3>
+  </div>
+</div>
+
+<div class="page"/>
+
+## 4.5. Finalny wygląd urządzenia
+
+<div class="container">
+  <div class="content-compact">
+    <h3>Wyprodukowane PCB</h3>
+    <img src="../static/pcb_top.jpg" alt="Góra PCB">
+  </div>
+</div>
+
+W gotowym projekcie zamiast płytki stykowej lub perforowanej - przydatnych w pierwszych fazach budowy i testowania - została stworzona dedykowana płytka PCB, którą stosuje się praktycznie we wszystkich profesjonalnych urządzeniach elektronicznych. Wynika to między innymi z tego że płytki PCB świetnie nadają się do tworzenia dowolnych układów elektronicznych o dowolnej złożoności.
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content-compact">
+    <h3>Układ PCB</h3>
+    <img src="../static/pcb_layout.png" alt="Układ PCB">
+  </div>
+</div>
+
+<div class="container">
+  <div class="content-expanded">
+    <h3>Schemat PCB</h3>
+    <img src="../static/pcb_schematic.png" alt="Schemat PCB">
+  </div>
 </div>

@@ -9,8 +9,10 @@
 - [4.1. Backend - strona serwerowa](#41-backend---strona-serwerowa)
 - [4.2. Frontend - strona użytkownika](#42-frontend---strona-użytkownika)
 - [4.3. Wygląd aplikacji](#43-wygląd-aplikacji)
-- [4.4. Prototypowy wygląd urządzenia](#44-prototypowy-wygląd-urządzenia)
-- [4.5. Finalny wygląd urządzenia](#45-finalny-wygląd-urządzenia)
+- [5. Część mechatroniczna - sterownik](#5-część-mechatroniczna---sterownik)
+- [5.1. Prototyp sterownika](#51-prototyp-sterownika)
+- [5.2. Gotowy produkt - sprzęt](#52-gotowy-produkt---sprzęt)
+- [5.3. Gotowy produkt - program](#53-gotowy-produkt---program)
 
 ## 1. Wstęp
 
@@ -82,7 +84,7 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 <div class="page"></div>
 
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Struktura plików frontendu</h3>
     <img src="../static/frontend_structure.png" alt="Struktura">
   </div>
@@ -93,14 +95,14 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 ## 4.3. Wygląd aplikacji
 
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Strona główna przed zalogowaniem</h3>
     <img src="../static/frontend_not_logged_in.png" alt="Nie zalogowany">
   </div>
 </div>
 
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Okno logowania</h3>
     <img src="../static/frontend_login_screen.png" alt="Okno logowania">
   </div>
@@ -109,46 +111,46 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 <div class="page"/>
 
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Demonstracja weryfikacji danych</h3>
     <img src="../static/frontend_login_screen_validation.png" alt="Weryfikacja danych">
   </div>
 </div>
 
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Demonstracja weryfikacji danych</h3>
     <img src="../static/frontend_login_screen_validation.png" alt="Demonstracja weryfikacji danych">
   </div>
 </div>
 
+<div class="page"/>
+
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Strona główna po zalogowaniu</h3>
     <img src="../static/frontend_home_page.png" alt="Strona główna">
   </div>
 </div>
 
-<div class="page"/>
-
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Profil zalogowanego użytkownika</h3>
     <img src="../static/frontend_login_screen.png" alt="Profil użytkownika">
   </div>
 </div>
 
+<div class="page"/>
+
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Strona "O stronie"</h3>
     <img src="../static/frontend_about_page.png" alt="O stronie">
   </div>
 </div>
 
-<div class="page"/>
-
 <div class="container">
-  <div class="content">
+  <div class="content-expanded">
     <h3>Panel z urządzeniami</h3>
     <img src="../static/frontend_dashboard_page_devices.png" alt="Urządzenia">
   </div>
@@ -156,9 +158,11 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 
 <div class="page"/>
 
-## 4.4. Prototypowy wygląd urządzenia
+## 5. Część mechatroniczna - sterownik
 
-Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nasz sterownik ***Schedule-Keepr* 1.0** który jest jednocześnie pierwszym urządzeniem funkcjonującym w naszym systemie. Jego zadaniem jest automatyzowanie funkcji aktywacji dzwonków lub jakiegokolwiek innego peryferia które może być sterowane wyjściem przekaźnikowym w odpowiednim przedziale czasowym.
+Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nasz sterownik ***Schedule-Keepr* 1.0** który jest jednocześnie pierwszym urządzeniem funkcjonującym w naszym systemie. Jego zadaniem jest automatyzowanie funkcji aktywacji (w odpowiednim przedziale czasowym lub na żądanie) dzwonków lub jakiegokolwiek innego peryferium które może być sterowane wyjściem przekaźnikowym.
+
+## 5.1. Prototyp sterownika
 
 <div class="container">
   <div class="content">
@@ -169,7 +173,7 @@ Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nas
 
 <div class="container-left">
   <div class="content">
-    <h3>1. Przekaźnik mechaniczy wraz z układem</h3>
+    <h3>1. Przekaźnik mechaniczy wraz z układem sterowania</h3>
     <h3>2. Konwerter poziomów logicznych</h3>
     <h3>3. Zasilanie 5V oraz 3.3V</h3>
     <h3>4. Linie I2C o napięciu logicznym 5V oraz 3.3V</h3>
@@ -189,7 +193,7 @@ Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nas
 
 <div class="container">
   <div class="content">
-    <h3>Opis złożenia elementów</h3>
+    <h3>Opis tymczasowego złożenia elementów</h3>
     <img src="../static/schedule_keepr_prototype_assembly.jpg" alt="Prototypowe złożenie">
   </div>
 </div>
@@ -202,11 +206,14 @@ Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nas
   </div>
 </div>
 
+W protopie naszego sterownika zdecydowaliśmy się tymczasowo zastosować popularny komputer jednopłytkowy Raspberry Pi zero W 2,
+stanowił on jednostkę centralną która wykonywała dedykowany program. Dodatkowo, wykorzystaliśmy wyświetlacz LCD, który umożliwiał intuicyjne wyświetlanie informacji użytkownikowi oraz poprawiał interakcję z naszym systemem. Prototyp, jak widać na załączonym zdjęciu, nie posiadał na początku żadnej obudowy.
+
 <div class="page"/>
 
-## 4.5. Finalny wygląd urządzenia
+## 5.2. Gotowy produkt - sprzęt
 
-W gotowym projekcie zamiast płytki stykowej lub perforowanej - przydatnych w pierwszych fazach budowy i testowania sterownika - została stworzona dedykowana płytka PCB, którą stosuje się praktycznie we wszystkich profesjonalnych urządzeniach elektronicznych. Wynika to między innymi z tego że płytki PCB świetnie nadają się do tworzenia dowolnych układów elektronicznych o dowolnej złożoności.
+W gotowym produkcie zamiast płytki stykowej lub perforowanej - przydatnych w pierwszych fazach budowy i testowania sterownika - została stworzona dedykowana płytka PCB, którą stosuje się praktycznie we wszystkich profesjonalnych urządzeniach elektronicznych. Wynika to między innymi z tego że płytki PCB świetnie nadają się do tworzenia dowolnych układów elektronicznych o dowolnej złożoności.
 
 <div class="container">
   <div class="content-ultra-compact">
@@ -215,7 +222,9 @@ W gotowym projekcie zamiast płytki stykowej lub perforowanej - przydatnych w pi
   </div>
 </div>
 
-Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany został program ***KiCad* 6.0.2**, jest to bardzo popularny wybór wśród entuzjastów elektroniki jak i profesjonalistów. Program ten oferuje zaawansowane narzędzia do projektowania schematów i układów PCB, co pozwoliło efektywnie stworzyć projekt sterownika. Jego popularność wynika z tego, że jest darmowy i otwarto źródłowy, co czyni go dostępnym dla szerokiego grona użytkowników. Zamówienie wyprodukowania płytek (10 sztuk) zostało złożone na stronie **PCBWay**.
+Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany został program ***KiCad* 6.0.2**, jest to bardzo popularny wybór wśród entuzjastów elektroniki jak i profesjonalistów. Program ten oferuje zaawansowane narzędzia do projektowania schematów i układów PCB, co pozwoliło efektywnie stworzyć projekt sterownika. Jego popularność wynika z tego, że jest darmowy i otwarto źródłowy, co czyni go dostępnym dla szerokiego grona użytkowników.
+
+*Zamówienie wyprodukowania płytek (10 sztuk) zostało złożone na stronie **PCBWay**.*
 
 <div class="page"/>
 
@@ -246,11 +255,9 @@ Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany zo
   <div class="content-compact">
     <h3>Wizualizacja 3D</h3>
     <img src="../static/pcb_3D_side.png" alt="Wizualizacja 3D góra">
-    <img src="../static/pcb_3D_side.png" alt="Wizualizacja 3D dół">
+    <img src="../static/pcb_3D_bottom.png" alt="Wizualizacja 3D dół">
   </div>
 </div>
-
-<div class="page"/>
 
 <div class="container">
   <div class="content-compact">
@@ -273,9 +280,31 @@ Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany zo
   <div class="content">
     <h3>1. Wejście i wyjścia zasilające 5V i 3.3V</h3>
     <h3>2. Złącza śrubowe przekaźnika</h3>
-    <h3>3. Przekaźnik wraz z układem</h3>
+    <h3>3. Przekaźnik wraz z układem sterowania</h3>
     <h3>4. Wskaźniki LED stanu przekaźnika oraz obecności zasilania</h3>
     <h3>5. Wejścia i wyjścia wraz z rezystorami podciągającymi w górę lub w dół</h3>
     <h3>6. Linie I2C o napięciu logicznym 5V oraz 3.3V</h3>
   </div>
 </div>
+
+Aby zapewnić wszechstronną kompatybilność naszego sterownika z różnorodnymi urządzeniami, zdecydowaliśmy się na wykorzystanie układu opartego na dwóch tranzystorach ***BSS138* (MOSFET typu N)** oraz czterech rezystorach. Ten układ jest przeznaczony do konwersji poziomów logicznych, co umożliwia skuteczną integrację naszego sterownika z różnymi urządzeniami wykorzystującymi protokół komunikacyjny I2C.
+
+<div class="container">
+  <div class="content">
+    <h3>Konwerter poziomów logicznych magistrali I2C</h3>
+    <img src="../static/pcb_logic_converter.png" alt="Konwerter poziomów I2C">
+  </div>
+</div>
+
+Na płytce znalazło się również wiele przydatnych wyprowadzeń, w tym wyprowadzenia z rezystorami podciągającymi w górę lub w dół. Te rezystory są kluczowe dla umożliwienia podpięcia różnych czujników, urządzeń wejściowych (takich jak przełączniki czy guziki), a nawet GPIO komputera znajdującego się w środku. Ich obecność zapewnia nie tylko elastyczność w integracji z różnymi układami lub urządzeniami, ale także stabilność sygnałów logicznych, co gwarantuje niezawodną pracę naszego sterownika w różnorodnych warunkach użytkowania.
+
+<div class="container">
+  <div class="content">
+    <h3>Rezystory podciągające w górę lub dół</h3>
+    <img src="../static/pcb_bias_resistors.png" alt="Rezystory podciągające">
+  </div>
+</div>
+
+Na tej płytce znajdują się również 2 wyjścia śrubowe od przekaźnika, które są używane do przesterowywania podłączonych do nich urządzeń. Dodatkowo, umieszczone zostały wskaźniki LED - niebieski wskaźnik informuje o stanie cewki przekaźnika, żółty oznacza zasilanie 3.3V, natomiast czerwony sygnalizuje zasilanie 5V - elementy te nie tylko zapewniają kontrolę nad działaniem urządzenia, ale także umożliwiają szybką diagnostykę stanu pracy sterownika, co przyczynia się do sprawnego monitorowania oraz konserwacji systemu.
+
+## 5.3. Gotowy produkt - program

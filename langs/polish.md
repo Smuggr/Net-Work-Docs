@@ -158,6 +158,8 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 
 ## 4.4. Prototypowy wygląd urządzenia
 
+Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nasz sterownik ***Schedule-Keepr* 1.0** który jest jednocześnie pierwszym urządzeniem funkcjonującym w naszym systemie. Jego zadaniem jest automatyzowanie funkcji aktywacji dzwonków lub jakiegokolwiek innego peryferia które może być sterowane wyjściem przekaźnikowym w odpowiednim przedziale czasowym.
+
 <div class="container">
   <div class="content">
     <h3>Prototyp PCB</h3>
@@ -170,8 +172,8 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
     <h3>1. Przekaźnik mechaniczy wraz z układem</h3>
     <h3>2. Konwerter poziomów logicznych</h3>
     <h3>3. Zasilanie 5V oraz 3.3V</h3>
-    <h3>4. Linie I2C 5V oraz 3.3V</h3>
-    <h3>5. Złącza śrubowe</h3>
+    <h3>4. Linie I2C o napięciu logicznym 5V oraz 3.3V</h3>
+    <h3>5. Złącza śrubowe przekaźnika</h3>
   </div>
 </div>
 
@@ -187,7 +189,7 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 
 <div class="container">
   <div class="content">
-    <h3>Prototypowe złożenie niektórych elementów</h3>
+    <h3>Opis złożenia elementów</h3>
     <img src="../static/schedule_keepr_prototype_assembly.jpg" alt="Prototypowe złożenie">
   </div>
 </div>
@@ -204,27 +206,76 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 
 ## 4.5. Finalny wygląd urządzenia
 
+W gotowym projekcie zamiast płytki stykowej lub perforowanej - przydatnych w pierwszych fazach budowy i testowania sterownika - została stworzona dedykowana płytka PCB, którą stosuje się praktycznie we wszystkich profesjonalnych urządzeniach elektronicznych. Wynika to między innymi z tego że płytki PCB świetnie nadają się do tworzenia dowolnych układów elektronicznych o dowolnej złożoności.
+
 <div class="container">
-  <div class="content-compact">
-    <h3>Wyprodukowane PCB</h3>
-    <img src="../static/pcb_top.jpg" alt="Góra PCB">
+  <div class="content-ultra-compact">
+    <h3>PCB od razu po rozpakowaniu</h3>
+    <img src="../static/pcb_delivered.jpg" alt="Góra PCB">
   </div>
 </div>
 
-W gotowym projekcie zamiast płytki stykowej lub perforowanej - przydatnych w pierwszych fazach budowy i testowania - została stworzona dedykowana płytka PCB, którą stosuje się praktycznie we wszystkich profesjonalnych urządzeniach elektronicznych. Wynika to między innymi z tego że płytki PCB świetnie nadają się do tworzenia dowolnych układów elektronicznych o dowolnej złożoności.
+Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany został program ***KiCad* 6.0.2**, jest to bardzo popularny wybór wśród entuzjastów elektroniki jak i profesjonalistów. Program ten oferuje zaawansowane narzędzia do projektowania schematów i układów PCB, co pozwoliło efektywnie stworzyć projekt sterownika. Jego popularność wynika z tego, że jest darmowy i otwarto źródłowy, co czyni go dostępnym dla szerokiego grona użytkowników. Zamówienie wyprodukowania płytek (10 sztuk) zostało złożone na stronie **PCBWay**.
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Zamówiona płytka tuż po zrealizowaniu</h3>
+    <img src="../static/pcb_order.png" alt="Układ PCB">
+  </div>
+
+  <div class="content-compact">
+    <h3>Układ elementów PCB</h3>
+    <img src="../static/pcb_layout.png" alt="Układ PCB">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content-expanded">
+    <h3>Schemat elektroniczny</h3>
+    <img src="../static/pcb_schematic.png" alt="Schemat PCB">
+  </div>
+</div>
 
 <div class="page"/>
 
 <div class="container">
   <div class="content-compact">
-    <h3>Układ PCB</h3>
-    <img src="../static/pcb_layout.png" alt="Układ PCB">
+    <h3>Wizualizacja 3D</h3>
+    <img src="../static/pcb_3D_side.png" alt="Wizualizacja 3D góra">
+    <img src="../static/pcb_3D_side.png" alt="Wizualizacja 3D dół">
   </div>
 </div>
 
+<div class="page"/>
+
 <div class="container">
-  <div class="content-expanded">
-    <h3>Schemat PCB</h3>
-    <img src="../static/pcb_schematic.png" alt="Schemat PCB">
+  <div class="content-compact">
+    <h3>Gotowe PCB</h3>
+    <img src="../static/pcb_top.jpg" alt="Góra PCB">
+    <img src="../static/pcb_bottom.jpg" alt="Dół PCB">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Opis złożenia elementów</h3>
+    <img src="../static/pcb_top_numbered.png" alt="Gotowe złożenie">
+  </div>
+</div>
+
+<div class="container-left">
+  <div class="content">
+    <h3>1. Wejście i wyjścia zasilające 5V i 3.3V</h3>
+    <h3>2. Złącza śrubowe przekaźnika</h3>
+    <h3>3. Przekaźnik wraz z układem</h3>
+    <h3>4. Wskaźniki LED stanu przekaźnika oraz obecności zasilania</h3>
+    <h3>5. Wejścia i wyjścia wraz z rezystorami podciągającymi w górę lub w dół</h3>
+    <h3>6. Linie I2C o napięciu logicznym 5V oraz 3.3V</h3>
   </div>
 </div>

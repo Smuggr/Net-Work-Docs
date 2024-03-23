@@ -109,6 +109,9 @@ Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak frame
 
 Głównymi zadaniami naszego oprogramowania ***Net-Work*** jest przedewszystkim łączenie urządzeń w jednym miejscu i umożliwienie niekoniecznie technologicznie zaawansowanym użytkownikom korzystanie z tych urządzeń. Urządzenia mogą łączyć się z **brokerem MQTT** na kilka sposobów:
 
+1. Poprzez emitowany przez oprogramowanie **serwis *MDNS***, który umożliwia proste "otrzymanie" adresu IP brokera w sieci lokalnej i połączenie się z nim. Użytkownik musi pozyskać niezbędne dane urządzenia poprzez skorzystanie z dostępnego interfejsu (na przykład wyświetlacza LCD), gdzie prezentowane są wygenerowane dane potrzebne do utworzenia połączenia, takie jak nazwa klienta **MQTT**, nazwa użytkownika i hasło. Dzięki temu prostemu mechanizmowi użytkownik może szybko i łatwo skonfigurować urządzenia do pracy w sieci **MQTT** bez konieczności ręcznego wprowadzania adresu IP brokera czy innych szczegółowych ustawień sieciowych.
+
+2. Poprzez manualne skonfigurowanie adresu IP brokera **MQTT** w ustawieniach urządzenia. Ten sposób wymaga od użytkownika znajomości adresu IP oraz innych szczegółowych parametrów sieciowych brokera i urządzenia. Po uzyskaniu tych informacji użytkownik musi ręcznie wprowadzić je do urządzenia na przykład poprzez ***SSH* (Secure Shell)**, co może być bardziej skomplikowane dla osób mniej zaznajomionych z technicznymi aspektami sieci komputerowych. Jednakże, dla bardziej zaawansowanych użytkowników, ten sposób może być preferowany ze względu na większą kontrolę nad konfiguracją sieciową urządzenia.
 
 ## 4.4. Wygląd aplikacji
 
@@ -119,6 +122,8 @@ Głównymi zadaniami naszego oprogramowania ***Net-Work*** jest przedewszystkim 
   </div>
 </div>
 
+<div class="page"/>
+
 <div class="container">
   <div class="content-expanded">
     <h3>Okno logowania</h3>
@@ -126,19 +131,10 @@ Głównymi zadaniami naszego oprogramowania ***Net-Work*** jest przedewszystkim 
   </div>
 </div>
 
-<div class="page"/>
-
 <div class="container">
   <div class="content-expanded">
     <h3>Demonstracja weryfikacji danych</h3>
     <img src="../static/frontend_login_screen_validation.png" alt="Weryfikacja danych">
-  </div>
-</div>
-
-<div class="container">
-  <div class="content-expanded">
-    <h3>Demonstracja weryfikacji danych</h3>
-    <img src="../static/frontend_login_screen_validation.png" alt="Demonstracja weryfikacji danych">
   </div>
 </div>
 
@@ -154,7 +150,7 @@ Głównymi zadaniami naszego oprogramowania ***Net-Work*** jest przedewszystkim 
 <div class="container">
   <div class="content-expanded">
     <h3>Profil zalogowanego użytkownika</h3>
-    <img src="../static/frontend_login_screen.png" alt="Profil użytkownika">
+    <img src="../static/frontend_profile_page.png" alt="Profil użytkownika">
   </div>
 </div>
 
@@ -203,6 +199,7 @@ Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nas
 
 <div class="container">
   <div class="content">
+    <h3>Dół zlutowanego prototypu</h3>
     <img src="../static/prototype_bottom.jpg" alt="Prototyp PCB">
   </div>
 </div>
@@ -231,6 +228,39 @@ stanowił on jednostkę centralną która wykonywała dedykowany program. Dodatk
 
 ## 5.2. Gotowy produkt - sprzęt
 
+Jeżeli chodzi o jednostkę centralną tym razem wykorzystaliśmy NanoPi Neo 1.4, która została wybrana ze względu na jej kompaktowy rozmiar, niskie zużycie energii (i również łatwa dostępność) oraz wystarczającą moc obliczeniową do realizacji zadań z zakresu sterowania i komunikacji w naszym systemie. Ma zainstalowany system **Debian 12** co zapewnia stabilność oraz wsparcie dla szerokiego zakresu aplikacji i narzędzi programistycznych, co jest kluczowe dla efektywnej pracy naszego oprogramowania.
+
+<div class="container">
+  <div class="content-expanded">
+    <h3>Komputer jednopłytkowy Nano Pi Neo 1.4</h3>
+    <img src="../static/nano_pi_layout.png" alt="NanoPi">
+  </div>
+</div>
+
+<div class="page"/>
+
+Jako urządzenie wyjściowe został zastosowany wyświetlacz **LCD *HD44780* (16x02)** wraz z konwerterem **I2C *PCF8574***, co umożliwia łatwe i wygodne wyświetlanie informacji użytkownikowi. Dzięki konwerterowi I2C, komunikacja z wyświetlaczem jest uproszczona, co znacząco ułatwia integrację tego komponentu z resztą systemu.
+
+<div class="container">
+  <div class="content-expanded">
+    <h3>Wyświetlacz LCD HD44780 wraz z konwerterem I2C PCF8574</h3>
+    <img src="../static/lcd_i2c.jpg" alt="Wyświetlacz">
+  </div>
+</div>
+
+<div class="page"/>
+
+Głównym zadaniem naszego sterownika jest zapewnienie dokładnego pomiaru czasu. Do tego celu wykorzystaliśmy moduł czasu rzeczywistego **(RTC) *DS3231***, który oferuje nie tylko wysoką precyzję zegara, ale ma także wbudowaną funkcje kompensacji zegara względem temperatury. Dzięki temu urządzenie utrzymuje dokładność pomiaru nawet w warunkach zmiennej temperatury otoczenia. Dodatkowo, moduł **DS3231** cechuje się niskim zużyciem energii, co przekłada się na długą żywotność baterii. Te zalety, wraz z prostym interfejsem komunikacyjnym i tym, że jednostka centralna nie musi synchronizować czasu z **serwera NTP** po każdej utracie zasilania, czynią go idealnym dla nas rozwiązaniem.
+
+<div class="container">
+  <div class="content">
+    <h3>Zegar czasu rzeczywistego DS3231</h3>
+    <img src="../static/rtc_ds3231.jpg" alt="Zegar">
+  </div>
+</div>
+
+<div class="page"/>
+
 W gotowym produkcie zamiast płytki stykowej lub perforowanej - przydatnych w pierwszych fazach budowy i testowania sterownika - została stworzona dedykowana płytka PCB, którą stosuje się praktycznie we wszystkich profesjonalnych urządzeniach elektronicznych. Wynika to między innymi z tego że płytki PCB świetnie nadają się do tworzenia dowolnych układów elektronicznych o dowolnej złożoności.
 
 <div class="container">
@@ -248,8 +278,8 @@ Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany zo
 
 <div class="container">
   <div class="content">
-    <h3>Zamówiona płytka tuż po zrealizowaniu</h3>
-    <img src="../static/pcb_order.png" alt="Układ PCB">
+    <h3>Zamówione płytki tuż po zrealizowaniu</h3>
+    <img src="../static/pcb_order.png" alt="Zamówione PCB">
   </div>
 
   <div class="content-compact">
@@ -329,7 +359,27 @@ Na płytce znalazło się również wiele przydatnych wyprowadzeń, w tym wyprow
 
 Na tej płytce znajdują się również 2 wyjścia śrubowe od przekaźnika (nr. 2), które są używane do przesterowywania podłączonych do nich urządzeń. Dodatkowo, umieszczone zostały wskaźniki LED (nr. 4) - niebieski wskaźnik informuje o stanie cewki przekaźnika, żółty oznacza zasilanie 3.3V, natomiast czerwony sygnalizuje zasilanie 5V - elementy te nie tylko zapewniają kontrolę nad działaniem urządzenia, ale także umożliwiają szybką diagnostykę stanu pracy sterownika, co przyczynia się do sprawnego monitorowania oraz konserwacji systemu.
 
+<div class="container">
+  <div class="content">
+    <h3>Gotowa do wydruku obudowa</h3>
+    <img src="../static/schedule_keepr_top.png" alt="Obudowa góra">
+    <img src="../static/schedule_keepr_bottom.png" alt="Obudowa góra">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Ułożenie komponentów wewnątrz obudowy</h3>
+    <img src="../static/pcb_lineup_test.jpg" alt="Ułożenie komponentów">
+    <img src="../static/pcb_lineup_test_alt.jpg" alt="Ułożenie komponentów bok">
+  </div>
+</div>
+
 <!-- dodaj zdjęcia bebechów sterownika, dopisz, że posiada tam wyświetlacz lcd, zegar rtc, buda była drukowana w 3D, chuje muje dzikie węże itd  -->
+
+<div class="page"/>
 
 ## 5.3. Gotowy produkt - program
 

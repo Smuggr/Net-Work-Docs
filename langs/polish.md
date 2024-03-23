@@ -63,12 +63,13 @@
 -- [5.1. Prototyp sterownika](#51-prototyp-sterownika)
 -- [5.2. Gotowy produkt - sprzęt](#52-gotowy-produkt---sprzęt)
 -- [5.3. Gotowy produkt - program](#53-gotowy-produkt---program)
-[6. Kosztorys](#6-kosztorys)
-[7. Zalety i korzyści](#7-zalety-i-korzyści)
-[8. Konkurencyjność](#8-konkurencyjność)
-[9. Innowacyjność](#9-innowacyjność)
-[10. Plany na przyszłość](#10-plany-na-przyszłość)
-[11. Gdzie nas można znaleść](#11-gdzie-nas-można-znaleść)
+[6. Część mechatroniczna - czujki dymu](#6-część-mechatroniczna---czujki-dymu)
+[7. Kosztorys](#7-kosztorys)
+[8. Zalety i korzyści](#8-zalety-i-korzyści)
+[9. Konkurencyjność](#9-konkurencyjność)
+[10. Innowacyjność](#10-innowacyjność)
+[11. Plany na przyszłość](#11-plany-na-przyszłość)
+[12. Gdzie nas można znaleść](#12-gdzie-nas-można-znaleść)
 
 <div class="page"/>
 
@@ -472,8 +473,17 @@ Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwol
 <div class="container">
   <div class="content">
     <h3>Ułożenie komponentów wewnątrz obudowy</h3>
+    <img src="../static/schedule_keepr_assembly_top.jpg" alt="Złożenie komponentów góra">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
     <img src="../static/pcb_lineup_test.jpg" alt="Ułożenie komponentów">
-    <img src="../static/pcb_lineup_test_alt.jpg" alt="Ułożenie komponentów bok">
+    <img src="../static/schedule_keepr_power_supply.jpg" alt="Ułożenie zasilacza">
+    <img src="../static/schedule_keepr_mounted.jpg" alt="Zamontowany sterownik">
   </div>
 </div>
 
@@ -498,7 +508,59 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
 
 <div class="page"/>
 
-## 6. Kosztorys
+## 6. Część mechatroniczna - czujki dymu
+
+<div class="container">
+  <div class="content">
+    <h3>Opis złożenia elementów</h3>
+    <img src="../static/a_vape_top.png" alt="Gotowe złożenie">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container-left">
+  <div class="content">
+    <h3>1. Stabilizator 5V L7805CV</h3>
+    <h3>2. Czujnik PMS5003</h3>
+    <h3>3. Czujnik krańcowy mini WK612</h3>
+    <h3>4. Brzęczyk</h3>
+    <h3>5. Przycisk monostabilny</h3>
+    <h3>6. Moduł przekaźnika 5V</h3>
+    <h3>7. Zasilacz montażowy Akyga 8.5-14V 2A</h3>
+    <h3>8. Beetle ESP32 - C3 RISC-V</h3>
+  </div>
+</div>
+
+W naszym projekcie znajduje się czujka dymu, której głównym zadaniem jest wykrywanie obecności dymu powstałego w wyniku palenia papierosów, używania urządzeń do inhalacji typu: vape, e-papierosy itp. Czujka działa w sposób automatyczny, reagując na wzrost stężenia cząstek stałych w powietrzu powyżej ustalonego progu, który jest wyższy niż poziom występujący na zewnątrz. W momencie wykrycia zanieczyszczenia, czujka aktywuje alarm dźwiękowy oraz wysyła powiadomienie o incydencie do użytkownika poprzez aplikację mobilną. Dodatkowo, ciągle przekazuje dane o stężeniu cząstek stałych do serwera, gdzie są archiwizowane i wykorzystywane do generowania wykresów. Przykładowy wykres, na przykładzie danych zebranych z jednej z toalet szkolnych, obrazuje godziny, w których odnotowano wzrost stężenia dymu, co umożliwia analizę trendów oraz podejmowanie działań zapobiegawczych.
+
+*Czerwoną linią na wykresie został zaznaczony próg **aktywacji czujki***
+
+<div class="container">
+  <div class="content-ultra-compact">
+    <h3>Wykres wartości odnotowanych w czasie</h3>
+    <img src="../static/a_vape_diagram.png" alt="Wykres wartości">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content-ultra-compact">
+    <h3>Wykres wartości odnotowanych w czasie</h3>
+    <img src="../static/a_vape_top.png" alt="Wykres wartości">
+  </div>
+</div>
+
+<div class="page"/>
+
+## 7. Kosztorys
+
+<div class="container">
+  <div class="content">
+    <h3>Sterownik Schedule-Keepr</h3>
+  </div>
+</div>
 
 <div class="container">
   <table>
@@ -582,13 +644,97 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
 <br />
 <div class="container-left">
   <div class="content">
-    <h3>Razem wychodzi 322.49 zł</h3>
+    <h3>Za sterownik Schedule-Keepr razem wychodzi <strong>322.49 zł</strong></h3>
   </div>
 </div>
 
 <div class="page"/>
 
-## 7. Zalety i korzyści
+<div class="container">
+  <div class="content">
+    <h3>Czujka dymu A-Vape</h3>
+  </div>
+</div>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Ilość</th>
+        <th>Cena</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Obudowa A-Vape</td>
+        <td>1</td>
+        <td>12 zł</td>
+      </tr>
+      <tr>
+        <td>Beetle ESP32 - C3 RISC-V</td>
+        <td>1</td>
+        <td>39.90 zł</td>
+      </tr>
+      <tr>
+        <td>Czujnik krańcowy mini WK616</td>
+        <td>1</td>
+        <td>2.50 zł</td>
+      </tr>
+      <tr>
+        <td>Stabilizator 5V L7805CV</td>
+        <td>1</td>
+        <td>2 zł</td>
+      </tr>
+      <tr>
+        <td>Zasilacz montażowy Akyga 8.5-14V 2A</td>
+        <td>1</td>
+        <td>31 zł</td>
+      </tr>
+      <tr>
+        <td>Przewody połączeniowe</td>
+        <td>-</td>
+        <td>6 zł</td>
+      </tr>
+      <tr>
+        <td>Kostka elektryczna</td>
+        <td>1</td>
+        <td>3.50 zł</td>
+      </tr>
+      <tr>
+        <td>Moduł przekaźnika 5V</td>
+        <td>1</td>
+        <td>8.50 zł</td>
+      </tr>
+      <tr>
+        <td>Brzęczyk</td>
+        <td>1</td>
+        <td>3 zł</td>
+      </tr>
+      <tr>
+        <td>Przycisk monostabilny</td>
+        <td>1</td>
+        <td>1 zł</td>
+      </tr>
+      <tr>
+        <td>Czujnik PMS5003</td>
+        <td>1</td>
+        <td>99 zł</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br />
+<div class="container-left">
+  <div class="content">
+    <h3>Za czujkę A-Vape razem wychodzi <strong>188.90 zł</strong></h3>
+  </div>
+</div>
+
+<div class="page"/>
+
+## 8. Zalety i korzyści
 
 - Kompaktowe wymiary urządzeń,
 - Możliwość montażu w miejsce starego sterownika (spełnia normy szaf elektrycznych)
@@ -601,12 +747,12 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
 - Możliwość ciągłego rozwoju systemu
 - **Smuggr *Net-Work*** to *system niezawodny*
 - Obsługa systemu jest intuicyjna
-- System jest zabezpieczony (duda dopisz o tym)
+- System jest zabezpieczony przed nieautoryzowanym dostępem za pomocą mechanizmów uwierzytelniania i autoryzacji opartych na **tokenach JWT** oraz **listach kontroli dostępu (ACL)**.
 - Dbałość o zdrowie osób trzecich
 
 <div class="page"/>
 
-## 8. Konkurencyjność
+## 9. Konkurencyjność
 
 System cechuje się dużymi możliwościami rozwoju i stosunkowo niską ceną, w odróżnieniu od innych tego typu rozwiązań o znacznie mniejszych możliwościach. Urządzenia nie występują jako jeden system i często ich działanie, na przykład: czujników dymu papierosowego pozostawia sporo do życzenia.
 
@@ -620,7 +766,7 @@ Ważną kwestią, którą warto podkreślić, jest fakt, że nasz projekt opiera
 
 <div class="page"/>
 
-## 9. Innowacyjność
+## 10. Innowacyjność
 
 System jest jedyny w swoim rodzaju, nie znaleźliśmy na rynku drugiego takiego samego projektu. Produkt pozwala na zastosowanie do tego typu zadań (w tym wypadku został przystosowany do czujników palenia i sterownika dzwonka szkolnego i nie tylko), ze względu na to, iż jego struktura została tak przygotowana, aby w prosty sposób dodając wtyczkę można było dodać do niego kolejne urządzenie a co za tym idzie umożliwić wykonywanie mu nowych zadań.
 
@@ -635,7 +781,7 @@ Urządzenie to jest pomocnym, innowacyjnym rozwiązaniem, potrzebnym w niejednej
 
 <div class="page"/>
 
-## 10. Plany na przyszłość
+## 11. Plany na przyszłość
 
 Planujemy w następujący sposób rozwijać system **Smuggr *Net-Work***:
 
@@ -654,7 +800,7 @@ Oczywiście z upływem czasu i nabyciem doświadczenia odkryjemy kolejne możliw
 
 <div class="page"/>
 
-## 11. Gdzie nas można znaleść
+## 12. Gdzie nas można znaleść
 
 <div class="container-center">
   <div class="text">

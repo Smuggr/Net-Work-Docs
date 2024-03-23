@@ -130,3 +130,16 @@ code {
 .container-left .content {
 	text-align: left;
 }
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	width: 80%;
+}
+
+th,
+td {
+	border: 1px solid black;
+	padding: 8px;
+	text-align: center;
+}

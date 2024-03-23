@@ -2,18 +2,24 @@
 
 # Spis Treści <!-- omit in toc -->
 
-- [1. Wstęp](#1-wstęp)
-- [2. Cele i założenia](#2-cele-i-założenia)
-- [3. Przebieg pracy](#3-przebieg-pracy)
-- [4. Część informatyczna](#4-część-informatyczna)
-- [4.1. Backend - strona serwerowa](#41-backend---strona-serwerowa)
-- [4.2. Frontend - strona użytkownika](#42-frontend---strona-użytkownika)
-- [4.3. Działanie aplikacji](#43-działanie-aplikacji)
-- [4.4. Wygląd aplikacji](#44-wygląd-aplikacji)
-- [5. Część mechatroniczna - sterownik](#5-część-mechatroniczna---sterownik)
-- [5.1. Prototyp sterownika](#51-prototyp-sterownika)
-- [5.2. Gotowy produkt - sprzęt](#52-gotowy-produkt---sprzęt)
-- [5.3. Gotowy produkt - program](#53-gotowy-produkt---program)
+[1. Wstęp](#1-wstęp)
+[2. Cele i założenia](#2-cele-i-założenia)
+[3. Przebieg pracy](#3-przebieg-pracy)
+[4. Część informatyczna](#4-część-informatyczna)
+-- [4.1. Backend - strona serwerowa](#41-backend---strona-serwerowa)
+-- [4.2. Frontend - strona użytkownika](#42-frontend---strona-użytkownika)
+-- [4.3. Działanie aplikacji](#43-działanie-aplikacji)
+-- [4.4. Wygląd aplikacji](#44-wygląd-aplikacji)
+[5. Część mechatroniczna - sterownik](#5-część-mechatroniczna---sterownik)
+-- [5.1. Prototyp sterownika](#51-prototyp-sterownika)
+-- [5.2. Gotowy produkt - sprzęt](#52-gotowy-produkt---sprzęt)
+-- [5.3. Gotowy produkt - program](#53-gotowy-produkt---program)
+[6. Kosztorys](#6-kosztorys)
+[7. Zalety i korzyści](#7-zalety-i-korzyści)
+[8. Konkurencyjność](#8-konkurencyjność)
+[9. Innowacyjność](#9-innowacyjność)
+[10. Plany na przyszłość](#10-plany-na-przyszłość)
+[11. Gdzie nas można znaleść](#11-gdzie-nas-można-znaleść)
 
 ## 1. Wstęp
 
@@ -397,3 +403,113 @@ Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwol
 Dedykowany program do sterownika został napisany w językach programowania ***Go*** oraz ***Bash***, realizuje on zadania z zakresu sterowania przekaźnikiem wbudowanym w płytkę PCB, synchronizacją zapisanego lokalnie harmonogramu przesterowywania przekaźnika oraz czasu **zegara RTC** pobranego z **serwera NTP**, dane na temat tego harmonogramu sterownik pozyskuje poprzez swoją instancje **dedykowanej wtyczki w brokerze MQTT** co pozwala zsynchronizować ten sam harmonogram na wielu urządzeniach na raz. Sam harmonogram po stronie **wtyczki** pobierany jest ze strony naszej szkoły, co umożliwia precyzyjne określenie momentu przełączenia przekaźnika na podstawie ustalonych przedziałów lekcji i przerw.
 
 Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, takimi jak na przykład urządzenia ***GPIO* (General Purpose Input/Output)** oraz do ustawiania czasu systemowego na podstawie danych z **zegara RTC**. Te skrypty wykonują kluczowe operacje sterowania, w tym przesterowywanie pinów **GPIO** w odpowiednim momencie (określonym z góry przez program w **Go**) oraz synchronizację czasu systemowego z dokładnym czasem dostarczanym przez **RTC**. Dzięki temu zapewniona jest precyzja i niezawodność w działaniu sterownika, a także możliwość zaprogramowania różnych zachowań w zależności od warunków czasowych i sygnałów zewnętrznych.
+
+<div class="page"/>
+
+## 6. Kosztorys
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Ilość</th>
+        <th>Cena</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Obudowa Schedule-Keepr</td>
+        <td>1</td>
+        <td>15 zł</td>
+      </tr>
+      <tr>
+        <td>NanoPi Neo 1.4</td>
+        <td>1</td>
+        <td>149 zł</td>
+      </tr>
+      <tr>
+        <td>Chłodzenie NanoPi</td>
+        <td>1</td>
+        <td>9 zł</td>
+      </tr>
+      <tr>
+        <td>Wyświetlacz LCD HD44780</td>
+        <td>1</td>
+        <td>25 zł</td>
+      </tr>
+      <tr>
+        <td>Zegar RTC DS3231</td>
+        <td>1</td>
+        <td>31 zł</td>
+      </tr>
+      <tr>
+        <td>Wyłącznik bistabilny</td>
+        <td>1</td>
+        <td>2 zł</td>
+      </tr>
+      <tr>
+        <td>Wyłącznik kołyskowy bistabilny</td>
+        <td>1</td>
+        <td>3 zł</td>
+      </tr>
+      <tr>
+        <td>Zasilacz montażowy Mean Well</td>
+        <td>1</td>
+        <td>42 zł</td>
+      </tr>
+      <tr>
+        <td>Przewody połączeniowe</td>
+        <td>1</td>
+        <td>6 zł</td>
+      </tr>
+      <tr>
+        <td>Przewód 1 mm^2</td>
+        <td>1 mb</td>
+        <td>5.50 zł</td>
+      </tr>
+      <tr>
+        <td>Przekaźnik RELPOL</td>
+        <td>1</td>
+        <td>12.99 zł</td>
+      </tr>
+      <tr>
+        <td>Śrubki, nakrętki, podkładki</td>
+        <td>-</td>
+        <td>4 zł</td>
+      </tr>
+      <tr>
+        <td>Przewody, rezystory, złącza, diody, tranzystory</td>
+        <td>-</td>
+        <td>18 zł</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br />
+<div class="container-left">
+  <div class="content">
+    <h3>Razem wychodzi 322.49 zł</h3>
+  </div>
+</div>
+
+<div class="page"/>
+
+## 7. Zalety i korzyści
+
+<div class="page"/>
+
+## 8. Konkurencyjność
+
+<div class="page"/>
+
+## 9. Innowacyjność
+
+<div class="page"/>
+
+## 10. Plany na przyszłość
+
+<div class="page"/>
+
+## 11. Gdzie nas można znaleść

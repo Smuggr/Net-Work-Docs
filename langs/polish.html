@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>polish.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/karol/Desktop/Smuggr/Software/Net-Work-Docs/styles/default.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!-- markdownlint-disable MD033 -->
+<div class="container">
+  <div class="content-expanded">
+    <h3>Dokumentacja techniczna projeku "Smuggr Net-Work"</h3>
+  </div>
+</div>
+<div class="page"/>
+<h1 id="spis-tre%C5%9Bci----omit-in-toc">Spis Treści <!-- omit in toc --></h1>
+<p><a href="#1-wst%C4%99p">1. Wstęp</a><br>
+<a href="#2-cele-i-za%C5%82o%C5%BCenia">2. Cele i założenia</a><br>
+<a href="#3-przebieg-pracy">3. Przebieg pracy</a><br>
+<a href="#4-cz%C4%99%C5%9B%C4%87-informatyczna">4. Część informatyczna</a><br>
+-- <a href="#41-backend---strona-serwerowa">4.1. Backend - strona serwerowa</a><br>
+-- <a href="#42-frontend---strona-u%C5%BCytkownika">4.2. Frontend - strona użytkownika</a><br>
+-- <a href="#43-dzia%C5%82anie-aplikacji">4.3. Działanie aplikacji</a><br>
+-- <a href="#44-wygl%C4%85d-aplikacji">4.4. Wygląd aplikacji</a><br>
+<a href="#5-cz%C4%99%C5%9B%C4%87-mechatroniczna---sterownik">5. Część mechatroniczna - sterownik</a><br>
+-- <a href="#51-prototyp-sterownika">5.1. Prototyp sterownika</a><br>
+-- <a href="#52-gotowy-produkt---sprz%C4%99t">5.2. Gotowy produkt - sprzęt</a><br>
+-- <a href="#53-gotowy-produkt---program">5.3. Gotowy produkt - program</a><br>
+<a href="#6-kosztorys">6. Kosztorys</a><br>
+<a href="#7-zalety-i-korzy%C5%9Bci">7. Zalety i korzyści</a><br>
+<a href="#8-konkurencyjno%C5%9B%C4%87">8. Konkurencyjność</a><br>
+<a href="#9-innowacyjno%C5%9B%C4%87">9. Innowacyjność</a><br>
+<a href="#10-plany-na-przysz%C5%82o%C5%9B%C4%87">10. Plany na przyszłość</a><br>
+<a href="#11-gdzie-nas-mo%C5%BCna-znale%C5%9B%C4%87">11. Gdzie nas można znaleść</a></p>
+<div class="page"/>
+<h2 id="1-wst%C4%99p">1. Wstęp</h2>
+<div class="page"/>
+<h2 id="2-cele-i-za%C5%82o%C5%BCenia">2. Cele i założenia</h2>
+<div class="page"/>
+<h2 id="3-przebieg-pracy">3. Przebieg pracy</h2>
+<div class="page"/>
+<h2 id="4-cz%C4%99%C5%9B%C4%87-informatyczna">4. Część informatyczna</h2>
+<p>Jedną z najważniejszych zalet <strong>Net-Worku</strong> jest jego infrastruktura informatyczna. W celu zbudowania funkcjonującego systemu wykorzystane zostały najnowsze frameworki oraz języki programowania. Samo oprogramowanie zostało napisane w kilku językach, strona serwerowa została napisana w języku <em><strong>Go</strong></em>, natomiast strona użytkownika została napisana w języku <em><strong>JavaScript</strong></em> wraz z frameworkiem <em><strong>Vue.js</strong></em> i komponentami w najnowszym standardzie material, <em><strong>Vuetify</strong></em>, do automatyzacji kompilacji i uruchamiania oprogramowania został wykorzystany <em><strong>Make</strong></em> oraz <em><strong>Bash</strong></em>.</p>
+<p>Komunikacja w oprogramowaniu opiera się na protokołach <em><strong>Message Queuing Telemetry Transport</strong></em> <strong>(MQTT) w wersji 3.11</strong> oraz <em><strong>Represantional State Transfer</strong></em> <strong>(REST)</strong>, oba protokoły są przydatne w różnych kontekstach komunikacyjnych. Protokół <strong>MQTT</strong> został wykorzystany ze względu na jego lekkość i efektywność, co czyni go idealnym rozwiązaniem dla aplikacji związanych z <strong>Internetem Rzeczy (IoT)</strong> oraz systemów o niskich wymaganiach zasobowych. Dzięki modelowi publikacji i subskrypcji <strong>(PUBSUB)</strong>, <strong>MQTT</strong> umożliwia efektywną wymianę danych między urządzeniami w czasie rzeczywistym. Z kolei architektura <strong>REST</strong> stanowi uniwersalny interfejs komunikacyjny, który pozwala na zarządzanie zasobami w sposób zrozumiały dla ludzi oraz maszyn. Wykorzystanie tych protokołów pozwala na elastyczne i skalowalne budowanie aplikacji, które są w stanie efektywnie komunikować się z różnymi systemami i urządzeniami.</p>
+<div class="page"/>
+<h2 id="41-backend---strona-serwerowa">4.1. Backend - strona serwerowa</h2>
+<p>W celu zbudowania bezpiecznego oraz wydajnego serwera <strong>REST</strong> i brokera <strong>MQTT</strong>, wykorzystane zostały następujące pakiety języka <strong>Go</strong>:</p>
+<ul>
+<li><strong><em>GIN</em> 1.9.1</strong></li>
+<li><strong><em>COMQTT</em> 2.5.4</strong></li>
+</ul>
+<p>Technologie te pozwalają na bezpośrednią integracje obu protokołów komunikacyjnych w jednej bazie kodu. W przypadku pakietu <strong>GIN</strong> dodatkowe możliwości wprowadzania <strong>middleware'ów</strong> (programów pośrednich między żądaniem a właściwą częścią aplikacji) pozwoliły na proste wbudowanie dodatkowych zabezpieczeń dostępu do serwera <strong>REST</strong>, takich jak:</p>
+<ul>
+<li>
+<p><strong>Ograniczenie szybkości zapytań (Rate Limiting)</strong> które jak sama nazwa wskazuje zmniejsza częstotliwość odpowiedzi na zapytania pochodzących od jednego klienta w określonym przedziale czasowym, co może pomóc w zapobieganiu nadmiernemu obciążeniu serwera.</p>
+</li>
+<li>
+<p><strong>Tokeny JWT (Json Web Token)</strong> które stanowią sposób na uwierzytelnianie i autoryzację użytkowników w serwerze <strong>REST</strong>. <strong>JWT</strong> są tokenami zawierającymi informacje o użytkowniku oraz jego uprawnieniach, podpisane przez serwer, co pozwala na bezpieczne przesyłanie tych danych między klientem a serwerem. Dzięki nim można łatwo kontrolować dostęp do zasobów oraz identyfikować użytkowników w systemie.</p>
+</li>
+</ul>
+<p>Natomiast pakiet <strong>COMQTT</strong> zapewnia nie tylko implementację protokołu <strong>MQTT</strong>, ale również możliwość bezpośredniego konfigurowania, monitorowania oraz ingerencji w broker <strong>MQTT</strong>. Dzięki temu można skonfigurować różne parametry działania brokera w sposób programowy, takie jak na przykład maksymalny rozmiar wiadomości czy maksymalna liczba połączonych klientów, a także monitorować jego wydajność i obciążenie. Ważną kwestią jest też możliwość uwierzetelniania klientów którzy próbują połączyć się z brokerem, realizowane jest to poprzez pozyskiwanie danych na temat klientów z bazy danych oraz porównywanie danych z którymi dany klient próbuje się połączyć. W wyniku tego można zapewnić bezpieczne i kontrolowane połączenia między klientami a brokerem <strong>MQTT</strong>.</p>
+<p>Dzięki wykorzystaniu tych pakietów możliwe było zrealizowanie nie tylko bezpiecznego, ale także wydajnego serwera <strong>REST</strong> oraz brokera <strong>MQTT</strong>, który spełnia wymagania zarówno pod kątem funkcjonalności, jak i wydajności.</p>
+<div class="page"/>
+<p>Ważną rzeczą w naszym oprogramowaniu jest również integracja z relacyjną <strong>bazą danych <em>PostgreSQL</em></strong>, aplikacja wykorzystuje ją aby przetrzymywać lub odczytywać dane na temat zarejestrowanych użytkowników, urządzeń, konfiguracji urządzeń czy wtyczek. Ingerować w nią mogą zarejestrowani użytkownicy posiadający odpowiedni poziom uprawnień.</p>
+<p>Dodawanie i obsługa urządzeń opiera się na wcześniej wspomnianych <em><strong>wtyczkach</strong></em>. Są one implementacjami programowymi, które mogą być dynamicznie załadowane do głównego projektu jako moduły zewnętrzne lub statycznie, bezpośrednio przy kompilacji głównego programu. Funkcjonalność taką umożliwia wbudowany do języka <strong>Go</strong>, pakiet <strong>Plugin</strong>. Wtyczki te są kompilowane do plików typu <strong><em>.so</em> (Shared Object)</strong> (odpowiednik plików DLL tylko że dla systemów na bazie UNIX'a), umożliwiając ich dynamiczne ładowanie i wykonanie w kontekście głównej aplikacji. Dzięki temu rozwiązaniu możliwe jest rozszerzanie funkcjonalności <em><strong>Net-Worku</strong></em> poprzez dodawanie nowych wtyczek bez konieczności modyfikacji kodu głównego programu. Wtyczki te stanowią modularne rozszerzenia aplikacji, co pozwala na elastyczne dostosowywanie i rozbudowywanie systemu w zależności od potrzeb użytkowników.</p>
+<p>Wtyczki muszą posiadać zarówno stronę serwerową jak i stronę użytkownika, strona serwerowa wykorzystywana jest do komunikacji instancji wtyczki z urządzeniem któremu została przypisana. Odbywa się to poprzez interfejs <strong><em>API</em> (Application Programming Interface)</strong> udostępniony przez wtyczkę, który umożliwia komunikację, poprzez różne protokoły komunikacyjne, z głównym systemem sterowania oraz obsługę żądań związanych z danym urządzeniem.</p>
+<p>Z kolei strona użytkownika wtyczki dostarcza interfejs graficzny, który umożliwia użytkownikowi konfigurację oraz monitorowanie działania danego urządzenia. Jest to miejsce, w którym użytkownik może na przykład zarządzać ustawieniami, przeglądać historię działania urządzenia, oraz podejmować różne akcje w zależności od funkcjonalności wtyczki i urządzenia. W ten sposób wtyczki pełnią kluczową rolę w zapewnieniu interakcji pomiędzy użytkownikiem a systemem sterowania, umożliwiając zarówno monitorowanie, jak i zarządzanie podłączonymi urządzeniami.</p>
+<p>Wtyczki mogą mieć dowolną funkcjonalnosć dostosowaną do wymogów konkretnego urządzenia lub systemu, co umożliwia elastyczne dostosowanie ich do różnorodnych zastosowań. W ten sposób, dzięki wtyczkom, użytkownik może rozbudowywać funkcjonalność systemu sterowania zgodnie z własnymi potrzebami.</p>
+<div class="page"/>
+<p>Dodatkowe narzędzia i paczki użyte przy tworzeniu i testowaniu strony serwerowej:</p>
+<ul>
+<li>Curl</li>
+<li>Postman</li>
+<li>MQTT Explorer</li>
+<li>PostgreSQL Explorer</li>
+<li><a href="https://github.com/charmbracelet/lipgloss">github.com/charmbracelet/lipgloss</a></li>
+<li><a href="https://github.com/didip/tollbooth">github.com/didip/tollbooth</a></li>
+<li><a href="https://github.com/gin-contrib/cors">github.com/gin-contrib/cors</a></li>
+<li><a href="https://github.com/gin-gonic/gin">github.com/gin-gonic/gin</a></li>
+<li><a href="https://github.com/golang-jwt/jwt">github.com/golang-jwt/jwt/v5</a></li>
+<li><a href="https://github.com/hashicorp/mdns">github.com/hashicorp/mdns</a></li>
+<li><a href="https://github.com/joho/godotenv">github.com/joho/godotenv</a></li>
+<li><a href="https://github.com/spf13/viper">github.com/spf13/viper</a></li>
+<li><a href="https://pkg.go.dev/golang.org/x/crypto">golang.org/x/crypto</a></li>
+<li><a href="https://gorm.io/gorm">gorm.io/gorm</a></li>
+</ul>
+<!-- Dodać tutaj dokumentacje API ze Swaggera -->
+<div class="page"/>
+<h2 id="42-frontend---strona-u%C5%BCytkownika">4.2. Frontend - strona użytkownika</h2>
+<p>Aplikacja internetowa w całości oparta została na frameworku <strong><em>Vue.js</em> 3</strong>. Dzięki zastosowaniu tej technologii aplikacja pod względem wydajnościowym wyraźnie wyprzedza inne projekty, które z domysłu oparte są o statyczne strony internetowe.</p>
+<p>Aplikacja internetowa oparta jest na nowoczesnych technologiach takich jak framework <strong><em>Vue.js</em> 3</strong>, <strong><em>Vite</em> 5.2.2</strong> jako narzędzie do budowania projektu w jedna spójną całość gotową do uruchomienia, oraz <em><strong>Vuetify</strong></em>, biblioteki komponentów <strong>Material Design</strong>. W połączeniu z biblioteką <strong><em>Pinia</em> 2.1.7</strong> do zarządzania stanem aplikacji oraz <strong><em>Axios</em> 1.6.7</strong> do komunikacji z serwerem, te technologie pozwoliły nam na stworzenie wyjątkowo wydajnej aplikacji jednostronowej <strong>SPA (Single Page Application)</strong>. <strong>Vue.js</strong> umożliwia dynamiczne routowanie po stronie użytkownika, eliminując jednocześnie konieczność przeładowywania całej strony podczas przejść miedzy różnymi widokami, co poprawia doświadczenie i komfort użytkownika. <strong>Pinia</strong> wraz z <strong>Axios</strong> zapewniają bezpieczną i wydajną komunikację z serwerem, a wykorzystanie komponentów z <strong>Vuetify</strong> ułatwiło stworzenie interfejsu użytkownika zgodnego ze standardem <strong>Material Design</strong>. Dzięki temu, architektura kodu aplikacji staje się bardziej przejrzysta i skalowalna, co znacznie ułatwia rozwój aplikacji o nowe funkcjonalności.</p>
+<div class="container">
+  <div class="content-compact">
+    <h3>Przykładowy komponent</h3>
+    <img src="../static/frontend_sample_component.png" alt="Komponent">
+  </div>
+</div>
+<div class="page"></div>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Struktura plików frontendu</h3>
+    <img src="../static/frontend_structure.png" alt="Struktura">
+  </div>
+</div>
+<div class="page"/>
+<h2 id="43-dzia%C5%82anie-aplikacji">4.3. Działanie aplikacji</h2>
+<p>Głównymi zadaniami naszego oprogramowania <em><strong>Net-Work</strong></em> jest przedewszystkim łączenie urządzeń w jednym miejscu i umożliwienie niekoniecznie technologicznie zaawansowanym użytkownikom korzystanie z tych urządzeń. Urządzenia mogą łączyć się z <strong>brokerem MQTT</strong> na kilka sposobów:</p>
+<ol>
+<li>
+<p>Poprzez emitowany przez oprogramowanie <strong>serwis <em>MDNS</em></strong>, który umożliwia proste &quot;otrzymanie&quot; adresu IP brokera w sieci lokalnej i połączenie się z nim. Użytkownik musi pozyskać niezbędne dane urządzenia poprzez skorzystanie z dostępnego interfejsu (na przykład wyświetlacza LCD), gdzie prezentowane są wygenerowane dane potrzebne do utworzenia połączenia, takie jak nazwa klienta <strong>MQTT</strong>, nazwa użytkownika i hasło. Dzięki temu prostemu mechanizmowi użytkownik może szybko i łatwo skonfigurować urządzenia do pracy w sieci <strong>MQTT</strong> bez konieczności ręcznego wprowadzania adresu IP brokera czy innych szczegółowych ustawień sieciowych.</p>
+</li>
+<li>
+<p>Poprzez manualne skonfigurowanie adresu IP brokera <strong>MQTT</strong> w ustawieniach urządzenia. Ten sposób wymaga od użytkownika znajomości adresu IP oraz innych szczegółowych parametrów sieciowych brokera i urządzenia. Po uzyskaniu tych informacji użytkownik musi ręcznie wprowadzić je do urządzenia na przykład poprzez <strong><em>SSH</em> (Secure Shell)</strong>, co może być bardziej skomplikowane dla osób mniej zaznajomionych z technicznymi aspektami sieci komputerowych. Jednakże, dla bardziej zaawansowanych użytkowników, ten sposób może być preferowany ze względu na większą kontrolę nad konfiguracją sieciową urządzenia.</p>
+</li>
+</ol>
+<h2 id="44-wygl%C4%85d-aplikacji">4.4. Wygląd aplikacji</h2>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Strona główna przed zalogowaniem</h3>
+    <img src="../static/frontend_not_logged_in.png" alt="Nie zalogowany">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Okno logowania</h3>
+    <img src="../static/frontend_login_screen.png" alt="Okno logowania">
+  </div>
+</div>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Demonstracja weryfikacji danych</h3>
+    <img src="../static/frontend_login_screen_validation.png" alt="Weryfikacja danych">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Strona główna po zalogowaniu</h3>
+    <img src="../static/frontend_home_page.png" alt="Strona główna">
+  </div>
+</div>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Profil zalogowanego użytkownika</h3>
+    <img src="../static/frontend_profile_page.png" alt="Profil użytkownika">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Strona "O stronie"</h3>
+    <img src="../static/frontend_about_page.png" alt="O stronie">
+  </div>
+</div>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Panel z urządzeniami</h3>
+    <img src="../static/frontend_dashboard_devices.png" alt="Urządzenia">
+  </div>
+</div>
+<div class="page"/>
+<h2 id="5-cz%C4%99%C5%9B%C4%87-mechatroniczna---sterownik">5. Część mechatroniczna - sterownik</h2>
+<p>Naszym projektem nie jest jedynie oprogramowanie, należy do niego również nasz sterownik <strong><em>Schedule-Keepr</em> 1.0</strong> który jest jednocześnie pierwszym urządzeniem funkcjonującym w naszym systemie. Jego zadaniem jest automatyzowanie funkcji aktywacji (w odpowiednim przedziale czasowym lub na żądanie) dzwonków lub jakiegokolwiek innego peryferium które może być sterowane wyjściem przekaźnikowym.</p>
+<h2 id="51-prototyp-sterownika">5.1. Prototyp sterownika</h2>
+<div class="container">
+  <div class="content">
+    <h3>Prototyp PCB</h3>
+    <img src="../static/prototype_top.jpg" alt="Prototyp PCB">
+  </div>
+</div>
+<div class="container-left">
+  <div class="content">
+    <h3>1. Przekaźnik mechaniczy wraz z układem sterowania</h3>
+    <h3>2. Konwerter poziomów logicznych</h3>
+    <h3>3. Zasilanie 5V oraz 3.3V</h3>
+    <h3>4. Linie I2C o napięciu logicznym 5V oraz 3.3V</h3>
+    <h3>5. Złącza śrubowe przekaźnika</h3>
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content">
+    <h3>Dół zlutowanego prototypu</h3>
+    <img src="../static/prototype_bottom.jpg" alt="Prototyp PCB">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content">
+    <h3>Opis tymczasowego złożenia elementów</h3>
+    <img src="../static/schedule_keepr_prototype_assembly.jpg" alt="Prototypowe złożenie">
+  </div>
+</div>
+<div class="container-left">
+  <div class="content">
+    <h3>1. Prototyp PCB</h3>
+    <h3>2. Raspberry Pi Zero W 2</h3>
+    <h3>3. Wyświetlacz LCD</h3>
+  </div>
+</div>
+<p>W protopie naszego sterownika zdecydowaliśmy się tymczasowo zastosować popularny komputer jednopłytkowy Raspberry Pi zero W 2,<br>
+stanowił on jednostkę centralną która wykonywała dedykowany program. Dodatkowo, wykorzystaliśmy wyświetlacz LCD, który umożliwiał intuicyjne wyświetlanie informacji użytkownikowi oraz poprawiał interakcję z naszym systemem. Prototyp, jak widać na załączonym zdjęciu, nie posiadał na początku żadnej obudowy.</p>
+<div class="page"/>
+<h2 id="52-gotowy-produkt---sprz%C4%99t">5.2. Gotowy produkt - sprzęt</h2>
+<p>Jeżeli chodzi o jednostkę centralną tym razem wykorzystaliśmy NanoPi Neo 1.4, która została wybrana ze względu na jej kompaktowy rozmiar, niskie zużycie energii (i również łatwa dostępność) oraz wystarczającą moc obliczeniową do realizacji zadań z zakresu sterowania i komunikacji w naszym systemie. Ma zainstalowany system <strong>Debian 12</strong> co zapewnia stabilność oraz wsparcie dla szerokiego zakresu aplikacji i narzędzi programistycznych, co jest kluczowe dla efektywnej pracy naszego oprogramowania.</p>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Komputer jednopłytkowy Nano Pi Neo 1.4</h3>
+    <img src="../static/nano_pi_layout.png" alt="NanoPi">
+  </div>
+</div>
+<div class="page"/>
+<p>Jako urządzenie wyjściowe został zastosowany wyświetlacz <strong>LCD <em>HD44780</em> (16x02)</strong> wraz z konwerterem <strong>I2C <em>PCF8574</em></strong>, co umożliwia łatwe i wygodne wyświetlanie informacji użytkownikowi. Dzięki konwerterowi I2C, komunikacja z wyświetlaczem jest uproszczona, co znacząco ułatwia integrację tego komponentu z resztą systemu.</p>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Wyświetlacz LCD HD44780 wraz z konwerterem I2C PCF8574</h3>
+    <img src="../static/lcd_i2c.jpg" alt="Wyświetlacz">
+  </div>
+</div>
+<div class="page"/>
+<p>Głównym zadaniem naszego sterownika jest zapewnienie dokładnego pomiaru czasu. Do tego celu wykorzystaliśmy moduł czasu rzeczywistego <strong>(RTC) <em>DS3231</em></strong>, który oferuje nie tylko wysoką precyzję zegara, ale ma także wbudowaną funkcje kompensacji zegara względem temperatury. Dzięki temu urządzenie utrzymuje dokładność pomiaru nawet w warunkach zmiennej temperatury otoczenia. Dodatkowo, moduł <strong>DS3231</strong> cechuje się niskim zużyciem energii, co przekłada się na długą żywotność baterii. Te zalety, wraz z prostym interfejsem komunikacyjnym i tym, że jednostka centralna nie musi synchronizować czasu z <strong>serwera NTP</strong> po każdej utracie zasilania, czynią go idealnym dla nas rozwiązaniem.</p>
+<div class="container">
+  <div class="content">
+    <h3>Zegar czasu rzeczywistego DS3231</h3>
+    <img src="../static/rtc_ds3231.jpg" alt="Zegar">
+  </div>
+</div>
+<div class="page"/>
+<p>W gotowym produkcie zamiast płytki stykowej lub perforowanej - przydatnych w pierwszych fazach budowy i testowania sterownika - została stworzona dedykowana płytka PCB, którą stosuje się praktycznie we wszystkich profesjonalnych urządzeniach elektronicznych. Wynika to między innymi z tego że płytki PCB świetnie nadają się do tworzenia dowolnych układów elektronicznych o dowolnej złożoności.</p>
+<div class="container">
+  <div class="content-ultra-compact">
+    <h3>PCB od razu po rozpakowaniu</h3>
+    <img src="../static/pcb_delivered.jpg" alt="Góra PCB">
+  </div>
+</div>
+<p>Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany został program <strong><em>KiCad</em> 6.0.2</strong>, jest to bardzo popularny wybór wśród entuzjastów elektroniki jak i profesjonalistów. Program ten oferuje zaawansowane narzędzia do projektowania schematów i układów PCB, co pozwoliło efektywnie stworzyć projekt sterownika. Jego popularność wynika z tego, że jest darmowy i otwarto źródłowy, co czyni go dostępnym dla szerokiego grona użytkowników.</p>
+<p><em>Zamówienie wyprodukowania płytek (10 sztuk) zostało złożone na stronie <strong>PCBWay</strong>.</em></p>
+<div class="page"/>
+<div class="container">
+  <div class="content">
+    <h3>Zamówione płytki tuż po zrealizowaniu</h3>
+    <img src="../static/pcb_order.png" alt="Zamówione PCB">
+  </div>
+  <div class="content-compact">
+    <h3>Układ elementów PCB</h3>
+    <img src="../static/pcb_layout.png" alt="Układ PCB">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content-expanded">
+    <h3>Schemat elektroniczny</h3>
+    <img src="../static/pcb_schematic.png" alt="Schemat PCB">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content-compact">
+    <h3>Wizualizacja 3D</h3>
+    <img src="../static/pcb_3D_side.png" alt="Wizualizacja 3D góra">
+    <img src="../static/pcb_3D_bottom.png" alt="Wizualizacja 3D dół">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content-compact">
+    <h3>Gotowe PCB</h3>
+    <img src="../static/pcb_top.jpg" alt="Góra PCB">
+    <img src="../static/pcb_bottom.jpg" alt="Dół PCB">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content">
+    <h3>Opis złożenia elementów</h3>
+    <img src="../static/pcb_top_numbered.png" alt="Gotowe złożenie">
+  </div>
+</div>
+<div class="container-left">
+  <div class="content">
+    <h3>1. Wejście i wyjścia zasilające 5V i 3.3V</h3>
+    <h3>2. Złącza śrubowe przekaźnika</h3>
+    <h3>3. Przekaźnik wraz z układem sterowania</h3>
+    <h3>4. Wskaźniki LED stanu przekaźnika oraz obecności zasilania</h3>
+    <h3>5. Wejścia i wyjścia wraz z rezystorami podciągającymi w górę lub w dół</h3>
+    <h3>6. Linie I2C o napięciu logicznym 5V oraz 3.3V</h3>
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content">
+    <h3>Konwerter poziomów logicznych magistrali I2C</h3>
+    <img src="../static/pcb_logic_converter.png" alt="Konwerter poziomów I2C">
+  </div>
+</div>
+<p>Aby zapewnić wszechstronną kompatybilność naszego sterownika z różnorodnymi urządzeniami, zdecydowaliśmy się na wykorzystanie układu (nr. 6) opartego na dwóch tranzystorach <strong><em>BSS138</em> (MOSFET typu N)</strong> oraz czterech rezystorach. Ten układ jest przeznaczony do konwersji poziomów logicznych, co umożliwia skuteczną integrację naszego sterownika z różnymi urządzeniami wykorzystującymi protokół komunikacyjny I2C.</p>
+<div class="container">
+  <div class="content">
+    <h3>Rezystory podciągające w górę lub dół</h3>
+    <img src="../static/pcb_bias_resistors.png" alt="Rezystory podciągające">
+  </div>
+</div>
+<p>Na płytce znalazło się również wiele przydatnych wyprowadzeń, w tym wyprowadzenia z rezystorami podciągającymi w górę lub w dół (nr. 5). Te rezystory są kluczowe dla umożliwienia podpięcia różnych czujników, urządzeń wejściowych (takich jak przełączniki czy guziki) a nawet GPIO komputera jednopłytkowego znajdującego się w środku. Ich obecność zapewnia nie tylko elastyczność w integracji z różnymi układami lub urządzeniami, ale także stabilność sygnałów logicznych, co gwarantuje niezawodną pracę naszego sterownika w różnorodnych warunkach użytkowania.</p>
+<p>Na tej płytce znajdują się również 2 wyjścia śrubowe od przekaźnika (nr. 2), które są używane do przesterowywania podłączonych do nich urządzeń. Dodatkowo, umieszczone zostały wskaźniki LED (nr. 4) - niebieski wskaźnik informuje o stanie cewki przekaźnika, żółty oznacza zasilanie 3.3V, natomiast czerwony sygnalizuje zasilanie 5V - elementy te nie tylko zapewniają kontrolę nad działaniem urządzenia, ale także umożliwiają szybką diagnostykę stanu pracy sterownika, co przyczynia się do sprawnego monitorowania oraz konserwacji systemu.</p>
+<div class="container">
+  <div class="content">
+    <h3>Gotowa do wydruku 3D obudowa</h3>
+    <img src="../static/schedule_keepr_top.png" alt="Obudowa góra">
+    <img src="../static/schedule_keepr_bottom.png" alt="Obudowa góra">
+  </div>
+</div>
+<p>Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwolił nam stworzyć precyzyjny projekt z uwzględnieniem wszystkich szczegółów konstrukcyjnych. Starannie zaprojektowaliśmy każdy aspekt obudowy, aby zapewnić nie tylko estetyczny wygląd, ale także ochronę dla wrażliwych podzespołów znajdujących się wewnątrz. Dodatkowo, projektowanie w programie DesignSpark Mechanical umożliwiło nam łatwe dostosowanie obudowy do naszych indywidualnych potrzeb oraz szybką iterację w celu wprowadzenia ewentualnych zmian i ulepszeń.</p>
+<div class="page"/>
+<div class="container">
+  <div class="content">
+    <h3>Ułożenie komponentów wewnątrz obudowy</h3>
+    <img src="../static/pcb_lineup_test.jpg" alt="Ułożenie komponentów">
+    <img src="../static/pcb_lineup_test_alt.jpg" alt="Ułożenie komponentów bok">
+  </div>
+</div>
+<div class="page"/>
+<div class="container">
+  <div class="content">
+    <h3>Gotowy do uruchomienia sterownik</h3>
+    <img src="../static/schedule_keepr_top_alt.jpg" alt="Sterownik góra">
+    <img src="../static/schedule_keepr_side.jpg" alt="Sterownik bok">
+    <img src="../static/schedule_keepr_running.jpg" alt="Sterownik uruchomiony">
+  </div>
+</div>
+<div class="page"/>
+<h2 id="53-gotowy-produkt---program">5.3. Gotowy produkt - program</h2>
+<p>Dedykowany program do sterownika został napisany w językach programowania <em><strong>Go</strong></em> oraz <em><strong>Bash</strong></em>, realizuje on zadania z zakresu sterowania przekaźnikiem wbudowanym w płytkę PCB, synchronizacją zapisanego lokalnie harmonogramu przesterowywania przekaźnika oraz czasu <strong>zegara RTC</strong> pobranego z <strong>serwera NTP</strong>, dane na temat tego harmonogramu sterownik pozyskuje poprzez swoją instancje <strong>dedykowanej wtyczki w brokerze MQTT</strong> co pozwala zsynchronizować ten sam harmonogram na wielu urządzeniach na raz. Sam harmonogram po stronie <strong>wtyczki</strong> pobierany jest ze strony naszej szkoły, co umożliwia precyzyjne określenie momentu przełączenia przekaźnika na podstawie ustalonych przedziałów lekcji i przerw.</p>
+<p>Skrypty w języku Bash używane są do interakcji z urządzeniami <em><strong>/dev/</strong></em>, takimi jak na przykład urządzenia <strong><em>GPIO</em> (General Purpose Input/Output)</strong> oraz do ustawiania czasu systemowego na podstawie danych z <strong>zegara RTC</strong>. Te skrypty wykonują kluczowe operacje sterowania, w tym przesterowywanie pinów <strong>GPIO</strong> w odpowiednim momencie (określonym z góry przez program w <strong>Go</strong>) oraz synchronizację czasu systemowego z dokładnym czasem dostarczanym przez <strong>RTC</strong>. Dzięki temu zapewniona jest precyzja i niezawodność w działaniu sterownika, a także możliwość zaprogramowania różnych zachowań w zależności od warunków czasowych i sygnałów zewnętrznych.</p>
+<div class="page"/>
+<h2 id="6-kosztorys">6. Kosztorys</h2>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Ilość</th>
+        <th>Cena</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Obudowa Schedule-Keepr</td>
+        <td>1</td>
+        <td>15 zł</td>
+      </tr>
+      <tr>
+        <td>NanoPi Neo 1.4</td>
+        <td>1</td>
+        <td>149 zł</td>
+      </tr>
+      <tr>
+        <td>Chłodzenie NanoPi</td>
+        <td>1</td>
+        <td>9 zł</td>
+      </tr>
+      <tr>
+        <td>Wyświetlacz LCD HD44780</td>
+        <td>1</td>
+        <td>25 zł</td>
+      </tr>
+      <tr>
+        <td>Zegar RTC DS3231</td>
+        <td>1</td>
+        <td>31 zł</td>
+      </tr>
+      <tr>
+        <td>Wyłącznik bistabilny</td>
+        <td>1</td>
+        <td>2 zł</td>
+      </tr>
+      <tr>
+        <td>Wyłącznik kołyskowy bistabilny</td>
+        <td>1</td>
+        <td>3 zł</td>
+      </tr>
+      <tr>
+        <td>Zasilacz montażowy Mean Well</td>
+        <td>1</td>
+        <td>42 zł</td>
+      </tr>
+      <tr>
+        <td>Przewody połączeniowe</td>
+        <td>1</td>
+        <td>6 zł</td>
+      </tr>
+      <tr>
+        <td>Przewód 1 mm^2</td>
+        <td>1 mb</td>
+        <td>5.50 zł</td>
+      </tr>
+      <tr>
+        <td>Przekaźnik RELPOL</td>
+        <td>1</td>
+        <td>12.99 zł</td>
+      </tr>
+      <tr>
+        <td>Śrubki, nakrętki, podkładki</td>
+        <td>-</td>
+        <td>4 zł</td>
+      </tr>
+      <tr>
+        <td>Przewody, rezystory, złącza, diody, tranzystory</td>
+        <td>-</td>
+        <td>18 zł</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br />
+<div class="container-left">
+  <div class="content">
+    <h3>Razem wychodzi 322.49 zł</h3>
+  </div>
+</div>
+<div class="page"/>
+<h2 id="7-zalety-i-korzy%C5%9Bci">7. Zalety i korzyści</h2>
+<div class="page"/>
+<h2 id="8-konkurencyjno%C5%9B%C4%87">8. Konkurencyjność</h2>
+<div class="page"/>
+<h2 id="9-innowacyjno%C5%9B%C4%87">9. Innowacyjność</h2>
+<div class="page"/>
+<h2 id="10-plany-na-przysz%C5%82o%C5%9B%C4%87">10. Plany na przyszłość</h2>
+<div class="page"/>
+<h2 id="11-gdzie-nas-mo%C5%BCna-znale%C5%9B%C4%87">11. Gdzie nas można znaleść</h2>
+
+</body>
+</html>

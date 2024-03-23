@@ -1,4 +1,53 @@
 <!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
+
+<div class="container">
+  <div class="content-expanded">
+    <h1>Dokumentacja techniczna projektu</h1>
+    <h2 class="title-text">"Smuggr Net-Work"</h2>
+    <img src="../static/net_work_logo.png" alt="Net-Work Logo" class="img-sm">
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+  <div class="content">
+    <h2 class="title-text"><strong>Autorzy:</strong></h2>
+    <h2>Karol Duda</h2>
+    <h2>Dawid Głąb</h2>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+  </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container-center">
+  <div class="content-compact">
+    <img src="../static/oshw_logo.png" alt="OSH Logo" class="img-xxxs">
+  </div>
+  <div class="content-compact">
+    <img src="../static/smuggr_logo.png" alt="Smuggr Logo" class="img-b">
+  </div>
+  <div class="content-compact">
+    <img src="../static/zsem_logo.png" alt="ZSEM Logo" class="img-xxs">
+  </div>
+</div>
+
+<div class="container-center">
+  <div class="content">
+    <h2>Zespół Szkół Elektryczno-Mechanicznych nr. 7 w Nowym Sączu</h2>
+  </div>
+</div>
 
 # Spis Treści <!-- omit in toc -->
 
@@ -21,11 +70,49 @@
 [10. Plany na przyszłość](#10-plany-na-przyszłość)
 [11. Gdzie nas można znaleść](#11-gdzie-nas-można-znaleść)
 
+<div class="page"/>
+
 ## 1. Wstęp
+
+Obecny świat daje nam mnóstwo możliwości rozwoju, dostępu do wiedzy, techniki, swobody i udogodnień życiowych, co niesie za sobą również ogromne tempo życia. Wynika z tego nieodparta potrzeba unowocześniania naszej codzienności, stwarzania jej bardziej punktualną, bezpieczną, wygodniejszą i pomocną w codziennych czynnościach, a także dbającą o nasze bezpieczeństwo i cenny czas:
+
+*"Czas jest darmowy, ale jest bezcenny. Nie możesz go posiąść, ale możesz go wykorzystać. Nie możesz go zatrzymać, ale możesz go na coś poświęcić. Raz stracony nie może być nigdy odzyskany." –  **Harvey MacKay***
+
+Dlatego postanowiliśmy zaprojektować i stworzyć możliwie uniwersalny system pozwalający za pomocą sieci **Wi-Fi** czy **LAN** łączyć różnego rodzaju nasze urządzenia jak na przykład: czujniki palenia, sterownik dzwonków szkolnych, otwieranie bramy przez sczytywanie tablic rejestracyjnych, itp.
+
+Aktualnie głównym zadaniem systemu jest obsługa inteligentnego sterownika dzwonków szkolnych oraz zbieraniu i przetwarzaniu danych z czujników palenia papierosów.
+
+Właściciel systemu może na bieżąco kontrolować czujniki/sterowniki na całym obiekcie po przez aplikacje webową czy aplikacje mobilną z każdego miejsca na świecie.
+
+<div class="page"/>
 
 ## 2. Cele i założenia
 
+1. Dbanie o punktualność dzwonków szkolnych.
+2. Stworzenie kompaktowych urządzeń IoT połączonych poprzez jeden system.
+3. Pomoc w egzekwowaniu zakazów palenia, na przykład: w placówkach szkolnych czy hotelach.
+4. Stworzenie systemu o praktycznie niekończących się możliwościach rozwoju.
+5. Wygodne sterowanie za pomocą internetu lub telefonu (aplikacji).
+6. Prostych w obsłudze i konfiguracji.
+
+System **Smuggr *Net-Work*** ma trafiać przede wszystkim do miejsc, w których cenione jest przestrzeganie zakazów palenia na przykład szkół, gdzie staramy się zwrócić szczególną uwagę na zdrowie młodocianych uczniów, a także w tych palcówkach oświaty unowocześnić stare sterowniki dzwonków, które dzwonią w swoim rytmie. Jak również do wszystkich ceniących porządek i przydatne nowinki techniczne.
+
+Jednak z założenia system jest uniwersalny, to znaczy, że również sprawdzi się w szpitalach, budynkach publicznych, czy pokojach hotelowych. **Smuggr *Net-Work*** może pracować bez przerwy, a do jego pracy wystarczy dostęp do sieci internetowej oraz zasilanie. Podczas tworzenia **Smuggr *Net-Work*** mieliśmy na uwadze również uniwersalność systemu pod względem zadań jakie może realizować. Fizyczna struktura systemu umożliwia łatwy montaż urządzeń pracujących w naszym projekcie. Nasze urządzenia nadają się do współpracy z innymi urządzeniami, na przykład: czujki do sieci **Wi-Fi** znajdującej się w obiekcie, sterownik dzwonków **Schedule-Keepr** - łatwo podpiąć do istniejącej instalacji.
+Przez cały okres tworzenia **Smuggr *Net-Work*** zwracaliśmy również uwagę na fakt, aby urządzenia były proste i nie generowały dużych kosztów utrzymania co jest ich ogromną zaletą. Postawiliśmy na podzespoły o wysokiej sprawności energetycznej oraz postaraliśmy się o zminimalizowanie zużycia energii dzięki temu urządzenia są ekologiczne.
+
+<div class="page"/>
+
 ## 3. Przebieg pracy
+
+Pracę nad projektem rozpoczęliśmy na początku października 2023 roku. Natomiast pomysł powstał wcześniej – bo na początku września 2023 roku.
+
+Pomysł narodził się w momencie, kiedy po raz kolejny dzwonek w naszej szkole nie został przestawiony na skrócone lekcje i do tego spóźniał się o ***ponad dwie minuty***. Postanowiliśmy to zmienić i stworzyć sterownik dzwonków, który sam na podstawie planu lekcji ustawia godziny, o których dzwoni oraz przez cały okres eksploatacji jest punktualny co do sekundy. Chcieliśmy też, aby była możliwość zarządzania nim przez internet, czy zamiast uruchamiania klasycznych dzwonków mógł opcjonalnie przy pomocy węzła radiowego w szkole, odgrywać różne dźwięki w tym inny na przerwę oraz inny na lekcje. Parę dni później dowiedzieliśmy się o nowym problemie, który zaczął się pojawiać, chodzi o nieprzestrzeganiu przez uczniów zakazu palenia e-papierosów na terenie placówki w toaletach. Co spowodowało, że postanowiliśmy zrobić uniwersalny system, który może połączyć zarządzanie czujkami oraz sterownikiem dzwonków, a w przyszłości kolejnych urządzeń takich jak, na przyklad później wspomniany: sterownik bramy, itd.
+
+Prace rozpoczęliśmy od zaprojektowania i wykonania prototypu sterownika dzwonków później powstał **serwer REST i broker MQTT**. Następnie zajęliśmy się stworzeniem czujników palenia i połączeniem tego w całość mając cały czas na uwadze, że w przyszłości będziemy chcieli dodawać kolejne urządzenia do naszego systemu, przez co musiał on być prosty w rozbudowie o następne elementy. W między czasie powstawała aplikacja mobilna na telefony, które są oparte o system android pozwalająca przeprowadzić pierwszą konfiguracje czujników oraz zawierająca pozostałe funkcje, które zawierała aplikacja internetowa.
+
+Najwięcej czasu poświeciliśmy na dopracowanie poszczególnych elementów systemu takich jak, na przykład: usunięcie wszelkich fałszywych alarmów generowanych przez czujki podczas fazy testów.
+
+<div class="page"/>
 
 ## 4. Część informatyczna
 
@@ -72,16 +159,21 @@ Dodatkowe narzędzia i paczki użyte przy tworzeniu i testowaniu strony serwerow
 - Postman
 - MQTT Explorer
 - PostgreSQL Explorer
-- [github.com/charmbracelet/lipgloss](https://github.com/charmbracelet/lipgloss)
-- [github.com/didip/tollbooth](https://github.com/didip/tollbooth)
-- [github.com/gin-contrib/cors](https://github.com/gin-contrib/cors)
-- [github.com/gin-gonic/gin](https://github.com/gin-gonic/gin)
-- [github.com/golang-jwt/jwt/v5](https://github.com/golang-jwt/jwt)
-- [github.com/hashicorp/mdns](https://github.com/hashicorp/mdns)
-- [github.com/joho/godotenv](https://github.com/joho/godotenv)
-- [github.com/spf13/viper](https://github.com/spf13/viper)
-- [golang.org/x/crypto](https://pkg.go.dev/golang.org/x/crypto)
-- [gorm.io/gorm](https://gorm.io/gorm)
+
+<br/>
+
+Otwarto źródłowe pakiety języka **Go**:
+
+- charmbracelet/lipgloss
+- didip/tollbooth
+- gin-contrib/cors
+- gin-gonic/gin
+- golang-jwt/jwt/v5
+- hashicorp/mdns
+- joho/godotenv
+- spf13/viper
+- golang.org/x/crypto
+- gorm.io/gorm
 
 <!-- Dodać tutaj dokumentacje API ze Swaggera -->
 
@@ -498,18 +590,101 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
 
 ## 7. Zalety i korzyści
 
+- Kompaktowe wymiary urządzeń,
+- Możliwość montażu w miejsce starego sterownika (spełnia normy szaf elektrycznych)
+- Łatwa w użyciu i przejrzysta aplikacja
+- Możliwość dostosowania parametrów do swoim potrzeb
+- Punktualność i bezobsługowość
+- W razie awarii szybkość demontażu obudowy (cztery śrubki)
+- W przyszłości możliwość dodania kolejnych urządzeń do systemu
+- Cena jest bardzo niska, co stanowi znaczącą korzyść dla klientów, szczególnie tych poszukujących ekonomicznych rozwiązań
+- Możliwość ciągłego rozwoju systemu
+- **Smuggr *Net-Work*** to *system niezawodny*
+- Obsługa systemu jest intuicyjna
+- System jest zabezpieczony (duda dopisz o tym)
+- Dbałość o zdrowie osób trzecich
+
 <div class="page"/>
 
 ## 8. Konkurencyjność
+
+System cechuje się dużymi możliwościami rozwoju i stosunkowo niską ceną, w odróżnieniu od innych tego typu rozwiązań o znacznie mniejszych możliwościach. Urządzenia nie występują jako jeden system i często ich działanie, na przykład: czujników dymu papierosowego pozostawia sporo do życzenia.
+
+Prosta i funkcjonalna budowa naszych urządzeń pozwala na łatwą i tanią eksploatację, a niewielkie rozmiary umożliwiają stosowanie ich w miejscach gdzie jest go mało. Jego montaż/demontaż jest bardzo prosty i intuicyjny, dzięki specjalnemu uchwytowi na szynę TH czy przykręceniu na kołkach do sufitu (czujki dymu), natomiast próba sabotażu, wyzwala alarm.
+
+Należy zwrócić również uwagę na fakt, iż system nie musi być wykorzystywany tylko w jednym celu, a wręcz posiada wiele możliwości, które w przyszłości mogą pozwolić na znaczne rozszerzania systemu o kolejne urządzenia peryferyjne współpracujące z sobą.
+
+System **Smuggr *Net-Work*** został zaprojektowany i stworzony przez młodych rozwijających się Polskich uczniów. Pozwoliło nam to na poszerzenie swoich umiejętności i daje nam to poczucie rozwoju Polskich wartości.
+
+Ważną kwestią, którą warto podkreślić, jest fakt, że nasz projekt opiera się na zasadach **otwartego oprogramowania (open source software)** oraz **otwartego sprzętu (open source hardware)**. Korzystając z tych zasad, udostępniamy nasz kod źródłowy oraz schematy sprzętowe publicznie, co umożliwia społeczności deweloperów i inżynierów dostęp do naszych rozwiązań. Dzięki temu każdy może zobaczyć, analizować i modyfikować nasze projekty zgodnie z własnymi potrzebami i wymaganiami. Ta otwartość sprzyja współpracy, innowacji i rozwojowi, co przyczynia się do szybszego postępu technologicznego i szerzenia się wiedzy w społeczności.
 
 <div class="page"/>
 
 ## 9. Innowacyjność
 
+System jest jedyny w swoim rodzaju, nie znaleźliśmy na rynku drugiego takiego samego projektu. Produkt pozwala na zastosowanie do tego typu zadań (w tym wypadku został przystosowany do czujników palenia i sterownika dzwonka szkolnego i nie tylko), ze względu na to, iż jego struktura została tak przygotowana, aby w prosty sposób dodając wtyczkę można było dodać do niego kolejne urządzenie a co za tym idzie umożliwić wykonywanie mu nowych zadań.
+
+**Smuggr *Net-Work*** nie ma skomplikowanej budowy, jest prosty w obsłudze, każda osoba dodana do systemu jako użytkownik/administrator, będzie potrafiła szybko opanować zarządzanie systemem. Z założenia powinien potrafić obsłużyć go prawie każdy.
+
+Nasz system jest skonstruowany w taki sposób, aby jego działanie było bardzo wydajne, posiada niezbędne funkcje i elementy ułatwiające codzienne funkcjonowanie placówek oświaty, hoteli, itp. w tym na przykład utrzymanie braku dymu w toaletach, czy pokojach hotelowych (dzięki temu zabezpiecza przed uruchomieniem czujek przeciw pożarowych i związanym z tym olbrzymich kosztów) czy poprawne działanie dzwonków.
+
+Należy zwrócić uwagę jeszcze na koszt takiego systemu i urządzeń w nim pracujących: niewielkie gabaryty, niskie koszty zakupu (często podstawowy element decyzji), brak potrzeby robienia skomplikowanej instalacji w budynku (może on być szybko i w prosty sposób wdrażany w danym obiekcie, a co za tym idzie może z niego skorzystać znacznie więcej placówek, które już funkcjonują), prosta konstrukcja (przy tym bezawaryjna) to elementy składające się na chęć zakupu naszego produktu.
+
+**Smuggr *Net-Work*** można podpiąć pod system sieci, w który wyposażony jest aktualnie prawie każdy budynek.
+Urządzenie to jest pomocnym, innowacyjnym rozwiązaniem, potrzebnym w niejednej placówce szkolnej. Dyrektor naszej szkoły jak i inne osoby wyraziły pozytywną opinie na temat systemu **Smuggr *Net-Work***. Należy też podkreślić, iż nasz system pracuje już w naszej szkole od pewnego czasu i jest niezawodny. Jest też u progu dodania następnego urządzenia, jakim jest sterownik bramy odczytujący tablice rejestracyjne. Jest to dla nas szansa na rozwiniecie projektu jak i w przyszłości wprowadzeniem go do produkcji.
+
 <div class="page"/>
 
 ## 10. Plany na przyszłość
 
+Planujemy w następujący sposób rozwijać system **Smuggr *Net-Work***:
+
+Wykonanie uniwersalnego, zintegrowanego i inteligentnego sterownika bram wjazdowych.
+Jednym z planów, który jest już w trakcie wykonania jest stworzenie uniwersalnego sterownika do bram wjazdowych różnego rodzaju, który w oparciu o dwie kamery odpowiednio ustawione będą widziały tablice rejestracyjne pojazdów, a następnie dzięki możliwością **Raspberry Pi 5** odczytane numery zostają porównane z tymi zawartymi w bazie danych, a finalnie otrzymana zgodność otworzy bramę.
+
+Ważne jest dla nas, aby można było podłączyć go do większości gotowych już systemów bramowych jako dodatkowa opcja, dlatego sterownik będzie posiadał przekaźnik, który będzie symulował "przycisk dzwonkowy" który można podłączyć do prawie każdego systemu obecnego na rynku.
+
+Chcemy również, aby oprócz automatycznego otwierania można było to robić przez telefon, stronę WWW czy pilotem. Kolejnym ważnym elementem ma być prostota w zarządzaniu, na przykład: wprowadzanie i usuwanie nowych tablic w aplikacji internetowej, możliwość otworzenia bramy przez aplikację z opcją zapamiętania numerów rejestracyjnych pojazdu,  który znajduje się przed bramą, itp. Należy też wspomnieć, że będzie mógł on wykorzystywać kamery z istniejącego monitoringu  zamontowanie w pobliżu bramy wjazdowej o ile będzie na tyle wyraźny obraz, aby można było odczytać tablicę rejestracyjne.
+Ze wstępnych wyliczeń wynika, iż nasze rozwiązanie jest znacznie tańsze od konkurencyjnych.
+
+Wykonanie kolejnego elementu systemu jaki jest licznik wejść i wyjść do danego obiektu/pomieszczenia.
+Kolejnym planem jest wykonanie prostego licznika, który możemy podłączyć do sieci i dzięki niemu utworzyć wykres jaki ruch występuje w danych godzinach.
+
+Oczywiście z upływem czasu i nabyciem doświadczenia odkryjemy kolejne możliwości systemu IoT jak i ulepszymy aktualne.
+
 <div class="page"/>
 
 ## 11. Gdzie nas można znaleść
+
+<div class="container-center">
+  <div class="text">
+    <a href="https://github.com/Smuggr">
+      <h4>Organizacja na GitHubie (https://github.com/Smuggr)</h4>
+    </a>
+  </div>
+  <div class="content-compact">
+    <img src="../static/qr_organization.png" alt="Organization">
+  </div>
+</div>
+
+<div class="container-center">
+  <div class="text">
+    <a href="https://github.com/Smuggr/Net-Work">
+      <h4>Repozytorium Net-Worku (https://github.com/Smuggr/Net-Work)</h4>
+    </a>
+  </div>
+  <div class="content-compact">
+    <img src="../static/qr_net_work.png" alt="Net-Work">
+  </div>
+</div>
+
+<div class="container-center">
+  <div class="text">
+    <a href="https://github.com/Smuggr/Net-Work-Docs">
+      <h4>Dokumentacja Net-Worku (https://github.com/Smuggr/Net-Work-Docs)</h4>
+    </a>
+  </div>
+  <div class="content-compact">
+    <img src="../static/qr_net_work_docs.png" alt="Net-Work Docs">
+  </div>
+</div>

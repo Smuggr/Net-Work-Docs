@@ -4,7 +4,7 @@
 
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 4px;
+	padding: 0 12px;
 }
 
 pre {
@@ -131,6 +131,25 @@ code {
 	text-align: left;
 }
 
+.container-center {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.container-center-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.text {
+	flex: 1;
+}
+
 table {
 	margin: 0 auto;
 	border-collapse: collapse;
@@ -139,7 +158,70 @@ table {
 
 th,
 td {
-	border: 1px solid black;
+	border: 1px solid #343a40;
 	padding: 8px;
 	text-align: center;
+}
+
+strong {
+	color: #212529;
+}
+
+p,
+a {
+	color: #212529;
+}
+
+.title-text {
+	font-size: 32px;
+}
+
+h1 {
+	color: #0d1b2a;
+}
+
+h2 {
+	color: #1b263b;
+}
+
+h3 {
+	color: #212529;
+}
+
+a {
+	font-size: 20px;
+}
+
+title-text {
+	font-size: 48px;
+}
+
+.img-xxxs {
+	width: 75px;
+	height: auto;
+}
+
+.img-xxs {
+	width: 100px;
+	height: auto;
+}
+
+.img-xs {
+	width: 150px;
+	height: auto;
+}
+
+.img-sm {
+	width: 250px;
+	height: auto;
+}
+
+.img-md {
+	max-width: 400px;
+	max-height: 400px;
+}
+
+.img-b {
+	max-width: 600px;
+	max-height: 600px;
 }

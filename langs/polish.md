@@ -166,7 +166,7 @@ Głównymi zadaniami naszego oprogramowania ***Net-Work*** jest przedewszystkim 
 <div class="container">
   <div class="content-expanded">
     <h3>Panel z urządzeniami</h3>
-    <img src="../static/frontend_dashboard_page_devices.png" alt="Urządzenia">
+    <img src="../static/frontend_dashboard_devices.png" alt="Urządzenia">
   </div>
 </div>
 
@@ -361,11 +361,13 @@ Na tej płytce znajdują się również 2 wyjścia śrubowe od przekaźnika (nr.
 
 <div class="container">
   <div class="content">
-    <h3>Gotowa do wydruku obudowa</h3>
+    <h3>Gotowa do wydruku 3D obudowa</h3>
     <img src="../static/schedule_keepr_top.png" alt="Obudowa góra">
     <img src="../static/schedule_keepr_bottom.png" alt="Obudowa góra">
   </div>
 </div>
+
+Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwolił nam stworzyć precyzyjny projekt z uwzględnieniem wszystkich szczegółów konstrukcyjnych. Starannie zaprojektowaliśmy każdy aspekt obudowy, aby zapewnić nie tylko estetyczny wygląd, ale także ochronę dla wrażliwych podzespołów znajdujących się wewnątrz. Dodatkowo, projektowanie w programie DesignSpark Mechanical umożliwiło nam łatwe dostosowanie obudowy do naszych indywidualnych potrzeb oraz szybką iterację w celu wprowadzenia ewentualnych zmian i ulepszeń.
 
 <div class="page"/>
 
@@ -377,10 +379,21 @@ Na tej płytce znajdują się również 2 wyjścia śrubowe od przekaźnika (nr.
   </div>
 </div>
 
-<!-- dodaj zdjęcia bebechów sterownika, dopisz, że posiada tam wyświetlacz lcd, zegar rtc, buda była drukowana w 3D, chuje muje dzikie węże itd  -->
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Gotowy do uruchomienia sterownik</h3>
+    <img src="../static/schedule_keepr_top_alt.jpg" alt="Sterownik góra">
+    <img src="../static/schedule_keepr_side.jpg" alt="Sterownik bok">
+    <img src="../static/schedule_keepr_running.jpg" alt="Sterownik uruchomiony">
+  </div>
+</div>
 
 <div class="page"/>
 
 ## 5.3. Gotowy produkt - program
 
-Dedykowany program do sterownika został napisany w językach programowania ***Go*** oraz ***Bash***,
+Dedykowany program do sterownika został napisany w językach programowania ***Go*** oraz ***Bash***, realizuje on zadania z zakresu sterowania przekaźnikiem wbudowanym w płytkę PCB, synchronizacją zapisanego lokalnie harmonogramu przesterowywania przekaźnika oraz czasu **zegara RTC** pobranego z **serwera NTP**, dane na temat tego harmonogramu sterownik pozyskuje poprzez swoją instancje **dedykowanej wtyczki w brokerze MQTT** co pozwala zsynchronizować ten sam harmonogram na wielu urządzeniach na raz. Sam harmonogram po stronie **wtyczki** pobierany jest ze strony naszej szkoły, co umożliwia precyzyjne określenie momentu przełączenia przekaźnika na podstawie ustalonych przedziałów lekcji i przerw.
+
+Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, takimi jak na przykład urządzenia ***GPIO* (General Purpose Input/Output)** oraz do ustawiania czasu systemowego na podstawie danych z **zegara RTC**. Te skrypty wykonują kluczowe operacje sterowania, w tym przesterowywanie pinów **GPIO** w odpowiednim momencie (określonym z góry przez program w **Go**) oraz synchronizację czasu systemowego z dokładnym czasem dostarczanym przez **RTC**. Dzięki temu zapewniona jest precyzja i niezawodność w działaniu sterownika, a także możliwość zaprogramowania różnych zachowań w zależności od warunków czasowych i sygnałów zewnętrznych.

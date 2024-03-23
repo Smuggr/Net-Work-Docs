@@ -69,7 +69,7 @@
 [9. Konkurencyjność](#9-konkurencyjność)
 [10. Innowacyjność](#10-innowacyjność)
 [11. Plany na przyszłość](#11-plany-na-przyszłość)
-[12. Gdzie nas można znaleść](#12-gdzie-nas-można-znaleść)
+[12. Gdzie nas można znaleźć](#12-gdzie-nas-można-znaleźć)
 
 <div class="page"/>
 
@@ -545,12 +545,43 @@ W naszym projekcie znajduje się czujka dymu, której głównym zadaniem jest wy
 
 <div class="page"/>
 
+W celu zapewnienia szybkiej reakcji oraz skutecznego działania czujki, konieczne jest dodatkowe wyposażenie w drugą czujkę lub stację pogodową, która dostarcza aktualne informacje o stężeniu zanieczyszczeń w powietrzu, w tym smogu. Ponadto, czujki zostały wyposażone w szereg zabezpieczeń mających na celu zapobieżenie działaniom niepożądanym:
+
+- Czujka wykrywa przypadki, gdy zostaje zablokowana lub zatkana, co skutkuje uruchomieniem alarmu oraz powiadomieniem operatora systemu o incydencie.
+
+- Zakłócenie komunikacji między czujką a systemem również inicjuje alarm, aby szybko zareagować na potencjalne próby manipulacji.
+
+- Próba otwarcia czujki także wywołuje alarm oraz wysyła stosowne powiadomienie, aby zapobiec próbom manipulacji lub uszkodzenia urządzenia.
+
+Początkowa konfiguracja czujki, w tym podłączenie do sieci oraz integracja z systemem, odbywa się za pomocą aplikacji mobilnej. Ponadto, aplikacja umożliwia monitorowanie danych na żywo z poszczególnych czujek, co pozwala na szybką reakcję na zmiany stężenia zanieczyszczeń w powietrzu.
+
+Warto również zaznaczyć, że czujki posiadają zdolność aktualizacji oprogramowania zdalnie, co jest realizowane poprzez mechanizm **Over-The-Air *(OTA)***. Do realizacji tego mechanizmu wykorzystują bibliotekę **ElegantOTA**. Dzięki tej funkcji możliwe jest wprowadzanie zmian w oprogramowaniu bez konieczności fizycznego podłączania się do urządzenia. Ta zaawansowana funkcjonalność umożliwia wygodne i efektywne zarządzanie oprogramowaniem na wielu urządzeniach zainstalowanych w różnych lokalizacjach.
+
+<div class="page"/>
+
 <div class="container">
   <div class="content-ultra-compact">
-    <h3>Wykres wartości odnotowanych w czasie</h3>
-    <img src="../static/a_vape_top.png" alt="Wykres wartości">
+    <h3>Konfiguracja dostępu do sieci Wi-Fi przez czujkę</h3>
+    <img src="../static/a_vape_app_config.jpg" alt="Konfiguracja czujki">
   </div>
 </div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content-ultra-compact">
+    <h3>Wskaźniki poziomów zanieczyszczeń poszczególnych czujek</h3>
+    <img src="../static/a_vape_app_indicators.jpg" alt="Wskaźniki czujek">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content-ultra-compact">
+    <h3>Strona główna aplikacji od czujek</h3>
+    <img src="../static/a_vape_app_home.jpg" alt="Strona główna czujek">
+  </div
 
 <div class="page"/>
 
@@ -800,7 +831,7 @@ Oczywiście z upływem czasu i nabyciem doświadczenia odkryjemy kolejne możliw
 
 <div class="page"/>
 
-## 12. Gdzie nas można znaleść
+## 12. Gdzie nas można znaleźć
 
 <div class="container-center">
   <div class="text">

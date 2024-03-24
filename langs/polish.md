@@ -555,7 +555,7 @@ W naszym projekcie znajduje się czujka dymu, której głównym zadaniem jest wy
 *Czerwoną linią na wykresie został zaznaczony próg **aktywacji czujki***
 
 <div class="container">
-  <div class="content-ultra-compact">
+  <div class="content">
     <h3>Wykres wartości odnotowanych w czasie</h3>
     <img src="../static/a_vape_diagram.png" alt="Wykres wartości">
   </div>
@@ -861,7 +861,10 @@ Oczywiście z upływem czasu i nabyciem doświadczenia odkryjemy kolejne możliw
     <img src="../static/qr_organization.png" alt="Organization">
   </div>
 </div>
-
+<br/>
+<br/>
+<br/>
+<br/>
 <div class="container-center">
   <div class="text">
     <a href="https://github.com/Smuggr/Net-Work">
@@ -872,7 +875,10 @@ Oczywiście z upływem czasu i nabyciem doświadczenia odkryjemy kolejne możliw
     <img src="../static/qr_net_work.png" alt="Net-Work">
   </div>
 </div>
-
+<br/>
+<br/>
+<br/>
+<br/>
 <div class="container-center">
   <div class="text">
     <a href="https://github.com/Smuggr/Net-Work-Docs">

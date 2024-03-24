@@ -529,13 +529,11 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
 ## 6. Część mechatroniczna - czujki dymu
 
 <div class="container">
-  <div class="content">
+  <div class="content-ultra-compact">
     <h3>Opis złożenia elementów</h3>
     <img src="../static/a_vape_top.png" alt="Gotowe złożenie">
   </div>
 </div>
-
-<div class="page"/>
 
 <div class="container-left">
   <div class="content">
@@ -549,6 +547,8 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
     <h3>8. Beetle ESP32 - C3 RISC-V</h3>
   </div>
 </div>
+
+<div class="page"/>
 
 W naszym projekcie znajduje się czujka dymu, której głównym zadaniem jest wykrywanie obecności dymu powstałego w wyniku palenia papierosów, używania urządzeń do inhalacji typu: vape, e-papierosy itp. Czujka działa w sposób automatyczny, reagując na wzrost stężenia cząstek stałych w powietrzu powyżej ustalonego progu, który jest wyższy niż poziom występujący na zewnątrz. W momencie wykrycia zanieczyszczenia, czujka aktywuje alarm dźwiękowy oraz wysyła powiadomienie o incydencie do użytkownika poprzez aplikację mobilną. Dodatkowo, ciągle przekazuje dane o stężeniu cząstek stałych do serwera, gdzie są archiwizowane i wykorzystywane do generowania wykresów. Przykładowy wykres, na przykładzie danych zebranych z jednej z toalet szkolnych, obrazuje godziny, w których odnotowano wzrost stężenia dymu, co umożliwia analizę trendów oraz podejmowanie działań zapobiegawczych.
 

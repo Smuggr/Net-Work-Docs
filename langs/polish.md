@@ -64,6 +64,8 @@
 -- [5.2. Gotowy produkt - sprzęt](#52-gotowy-produkt---sprzęt)
 -- [5.3. Gotowy produkt - program](#53-gotowy-produkt---program)
 [6. Część mechatroniczna - czujki dymu](#6-część-mechatroniczna---czujki-dymu)
+-- [6.1. Gotowy produkt - sprzęt](#61-gotowy-produkt---sprzęt)
+-- [6.2. Gotowy produkt - aplikacja](#62-gotowy-produkt---aplikacja)
 [7. Kosztorys](#7-kosztorys)
 [8. Zalety i korzyści](#8-zalety-i-korzyści)
 [9. Konkurencyjność](#9-konkurencyjność)
@@ -464,11 +466,11 @@ Na płytce znalazło się również wiele przydatnych wyprowadzeń, w tym wyprow
   <div class="content">
     <h3>Gotowa do wydruku 3D obudowa</h3>
     <img src="../static/schedule_keepr_top.png" alt="Obudowa góra">
-    <img src="../static/schedule_keepr_bottom.png" alt="Obudowa góra">
+    <img src="../static/schedule_keepr_bottom.png" alt="Obudowa dół">
   </div>
 </div>
 
-Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwolił nam stworzyć precyzyjny projekt z uwzględnieniem wszystkich szczegółów konstrukcyjnych. Starannie zaprojektowaliśmy każdy aspekt obudowy, aby zapewnić nie tylko estetyczny wygląd, ale także ochronę dla wrażliwych podzespołów znajdujących się wewnątrz. Dodatkowo, projektowanie w programie DesignSpark Mechanical umożliwiło nam łatwe dostosowanie obudowy do naszych indywidualnych potrzeb oraz szybką iterację w celu wprowadzenia ewentualnych zmian i ulepszeń.
+Model obudowy został wykonany w programie **DesignSpark Mechanical**, który pozwolił nam stworzyć precyzyjny projekt z uwzględnieniem wszystkich szczegółów konstrukcyjnych. Starannie zaprojektowaliśmy każdy aspekt obudowy, aby zapewnić nie tylko estetyczny wygląd, ale także ochronę dla wrażliwych podzespołów znajdujących się wewnątrz. Dodatkowo, projektowanie w programie **DesignSpark Mechanical** umożliwiło nam łatwe dostosowanie obudowy do naszych indywidualnych potrzeb oraz szybką iterację w celu wprowadzenia ewentualnych zmian i ulepszeń.
 
 <div class="page"/>
 
@@ -484,7 +486,8 @@ Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwol
 
 <div class="container">
   <div class="content">
-    <img src="../static/schedule_keepr_power_supply.jpg" alt="Ułożenie zasilacza">
+    <h3>Zamocowany zasilacz i jednostka centralna</h3>
+    <img src="../static/schedule_keepr_power_supply.jpg" alt="Ułożenie zasilacza i sbc">
   </div>
 </div>
 
@@ -528,8 +531,24 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
 
 ## 6. Część mechatroniczna - czujki dymu
 
+W naszym projekcie znajduje się także czujka dymu, której głównym zadaniem jest wykrywanie obecności dymu powstałego w wyniku palenia papierosów, używania urządzeń do inhalacji typu: vape, e-papierosy itp. Czujka działa w sposób automatyczny, reagując na wzrost stężenia cząstek stałych w powietrzu powyżej ustalonego progu, który jest wyższy niż poziom występujący na zewnątrz. W momencie wykrycia zanieczyszczenia, czujka aktywuje alarm dźwiękowy oraz wysyła powiadomienie o incydencie do użytkownika poprzez aplikację mobilną.
+
+## 6.1. Gotowy produkt - sprzęt
+
+Model obudowy, podobnie jak sterownik **Schedule-Keepr**, został wykonany w programie **DesignSpark Mechanical**, dzięki temu zapewniamy precyzyjne odwzorowanie wymiarów oraz szczegółów konstrukcyjnych, co gwarantuje doskonałe dopasowanie komponentów oraz estetyczny wygląd całego urządzenia.
+
 <div class="container">
-  <div class="content-ultra-compact">
+  <div class="content">
+    <h3>Gotowa do wydruku 3D obudowa</h3>
+    <img src="../static/a_vape_enclosure_front.png" alt="Obudowa przód">
+    <img src="../static/a_vape_enclosure_top_side.png" alt="Obudowa góra bok">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content-compact">
     <h3>Opis złożenia elementów</h3>
     <img src="../static/a_vape_top.png" alt="Gotowe złożenie">
   </div>
@@ -550,7 +569,9 @@ Skrypty w języku Bash używane są do interakcji z urządzeniami ***/dev/***, t
 
 <div class="page"/>
 
-W naszym projekcie znajduje się czujka dymu, której głównym zadaniem jest wykrywanie obecności dymu powstałego w wyniku palenia papierosów, używania urządzeń do inhalacji typu: vape, e-papierosy itp. Czujka działa w sposób automatyczny, reagując na wzrost stężenia cząstek stałych w powietrzu powyżej ustalonego progu, który jest wyższy niż poziom występujący na zewnątrz. W momencie wykrycia zanieczyszczenia, czujka aktywuje alarm dźwiękowy oraz wysyła powiadomienie o incydencie do użytkownika poprzez aplikację mobilną. Dodatkowo, ciągle przekazuje dane o stężeniu cząstek stałych do serwera, gdzie są archiwizowane i wykorzystywane do generowania wykresów. Przykładowy wykres, na przykładzie danych zebranych z jednej z toalet szkolnych, obrazuje godziny, w których odnotowano wzrost stężenia dymu, co umożliwia analizę trendów oraz podejmowanie działań zapobiegawczych.
+## 6.2. Gotowy produkt - aplikacja
+
+Dodatkowo, czujka, ciągle przekazuje dane o stężeniu cząstek stałych do serwera, gdzie są archiwizowane i wykorzystywane do generowania wykresów. Przykładowy wykres, na przykładzie danych zebranych z jednej z toalet szkolnych, obrazuje godziny, w których odnotowano wzrost stężenia dymu, co umożliwia analizę trendów oraz podejmowanie działań zapobiegawczych.
 
 *Czerwoną linią na wykresie został zaznaczony próg **aktywacji czujki***
 
@@ -599,7 +620,18 @@ Warto również zaznaczyć, że czujki posiadają zdolność aktualizacji oprogr
   <div class="content-ultra-compact">
     <h3>Strona główna aplikacji od czujek</h3>
     <img src="../static/a_vape_app_home.jpg" alt="Strona główna czujek">
-  </div
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Gotowa do uruchomienia czujka</h3>
+    <img src="../static/a_vape_side.jpg" alt="Czujka bok">
+    <img src="../static/a_vape_front.jpg" alt="Czujka przód">
+  </div>
+</div>
 
 <div class="page"/>
 
@@ -607,7 +639,7 @@ Warto również zaznaczyć, że czujki posiadają zdolność aktualizacji oprogr
 
 <div class="container">
   <div class="content">
-    <h3>Sterownik Schedule-Keepr</h3>
+    <h3><strong>Sterownik Schedule-Keepr</strong></h3>
   </div>
 </div>
 
@@ -701,7 +733,7 @@ Warto również zaznaczyć, że czujki posiadają zdolność aktualizacji oprogr
 
 <div class="container">
   <div class="content">
-    <h3>Czujka dymu A-Vape</h3>
+    <h3><strong>Czujka dymu A-Vape</strong></h3>
   </div>
 </div>
 
@@ -845,7 +877,9 @@ Ze wstępnych wyliczeń wynika, iż nasze rozwiązanie jest znacznie tańsze od 
 Wykonanie kolejnego elementu systemu jaki jest licznik wejść i wyjść do danego obiektu/pomieszczenia.
 Kolejnym planem jest wykonanie prostego licznika, który możemy podłączyć do sieci i dzięki niemu utworzyć wykres jaki ruch występuje w danych godzinach.
 
-Oczywiście z upływem czasu i nabyciem doświadczenia odkryjemy kolejne możliwości systemu IoT jak i ulepszymy aktualne.
+W planach rozwojowych **Smuggr Net-Work** znajduje się integracja inteligentnych zegarów **LED** opracowanych przez naszego kolegę **Piotrka**. Ten projekt jest obecnie w fazie realizacji i ma na celu połączenie inteligentnych zegarów **LED** z naszym systemem **IoT**, **Smuggr Net-Work**. Zegary stworzone przez **Piotrka** stanowią innowacyjne rozwiązanie, które doskonale komplementuje funkcjonalność **Smuggr Net-Work**. Ich integracja z naszym systemem pozwoli na rozszerzenie naszych możliwości oraz wspólne generowanie nowych pomysłów na rozwój systemu i wprowadzenie nowych funkcji oraz urządzeń.
+
+*Oczywiście z upływem czasu i nabyciem doświadczenia odkryjemy kolejne możliwości systemu **IoT** jak i ulepszymy **aktualne**.*
 
 <div class="page"/>
 

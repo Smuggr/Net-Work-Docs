@@ -390,15 +390,6 @@ Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany zo
 <div class="page"/>
 
 <div class="container">
-  <div class="content-expanded">
-    <h3>Schemat elektroniczny</h3>
-    <img src="../static/pcb_schematic.png" alt="Schemat PCB">
-  </div>
-</div>
-
-<div class="page"/>
-
-<div class="container">
   <div class="content-compact">
     <h3>Wizualizacja 3D</h3>
     <img src="../static/pcb_3D_side.png" alt="Wizualizacja 3D góra">
@@ -439,6 +430,17 @@ Do zaprojektowania schematu jak i układu płytki PCB sterownika wykorzystany zo
 <div class="page"/>
 
 <div class="container">
+  <div class="content-expanded">
+    <h3>Schemat elektroniczny</h3>
+    <img src="../static/pcb_schematic.png" alt="Schemat PCB">
+  </div>
+</div>
+
+Na tej płytce znajdują się 2 wyjścia śrubowe od przekaźnika (nr. 2), które są używane do przesterowywania podłączonych do nich urządzeń. Dodatkowo, umieszczone zostały wskaźniki LED (nr. 4) - niebieski wskaźnik informuje o stanie cewki przekaźnika, żółty oznacza zasilanie 3.3V, natomiast czerwony sygnalizuje zasilanie 5V - elementy te nie tylko zapewniają kontrolę nad działaniem urządzenia, ale także umożliwiają szybką diagnostykę stanu pracy sterownika, co przyczynia się do sprawnego monitorowania oraz konserwacji systemu.
+
+<div class="page"/>
+
+<div class="container">
   <div class="content">
     <h3>Konwerter poziomów logicznych magistrali I2C</h3>
     <img src="../static/pcb_logic_converter.png" alt="Konwerter poziomów I2C">
@@ -456,7 +458,7 @@ Aby zapewnić wszechstronną kompatybilność naszego sterownika z różnorodnym
 
 Na płytce znalazło się również wiele przydatnych wyprowadzeń, w tym wyprowadzenia z rezystorami podciągającymi w górę lub w dół (nr. 5). Te rezystory są kluczowe dla umożliwienia podpięcia różnych czujników, urządzeń wejściowych (takich jak przełączniki czy guziki) a nawet GPIO komputera jednopłytkowego znajdującego się w środku. Ich obecność zapewnia nie tylko elastyczność w integracji z różnymi układami lub urządzeniami, ale także stabilność sygnałów logicznych, co gwarantuje niezawodną pracę naszego sterownika w różnorodnych warunkach użytkowania.
 
-Na tej płytce znajdują się również 2 wyjścia śrubowe od przekaźnika (nr. 2), które są używane do przesterowywania podłączonych do nich urządzeń. Dodatkowo, umieszczone zostały wskaźniki LED (nr. 4) - niebieski wskaźnik informuje o stanie cewki przekaźnika, żółty oznacza zasilanie 3.3V, natomiast czerwony sygnalizuje zasilanie 5V - elementy te nie tylko zapewniają kontrolę nad działaniem urządzenia, ale także umożliwiają szybką diagnostykę stanu pracy sterownika, co przyczynia się do sprawnego monitorowania oraz konserwacji systemu.
+<div class="page"/>
 
 <div class="container">
   <div class="content">
@@ -474,6 +476,7 @@ Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwol
   <div class="content">
     <h3>Ułożenie komponentów wewnątrz obudowy</h3>
     <img src="../static/schedule_keepr_assembly_top.jpg" alt="Złożenie komponentów góra">
+    <img src="../static/pcb_lineup_test.jpg" alt="Ułożenie komponentów">
   </div>
 </div>
 
@@ -481,8 +484,15 @@ Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwol
 
 <div class="container">
   <div class="content">
-    <img src="../static/pcb_lineup_test.jpg" alt="Ułożenie komponentów">
     <img src="../static/schedule_keepr_power_supply.jpg" alt="Ułożenie zasilacza">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Przymiarka sterownika do szafy elektrycznej</h3>
     <img src="../static/schedule_keepr_mounted.jpg" alt="Zamontowany sterownik">
   </div>
 </div>
@@ -494,6 +504,14 @@ Model obudowy został wykonany w programie DesignSpark Mechanical, który pozwol
     <h3>Gotowy do uruchomienia sterownik</h3>
     <img src="../static/schedule_keepr_top_alt.jpg" alt="Sterownik góra">
     <img src="../static/schedule_keepr_side.jpg" alt="Sterownik bok">
+  </div>
+</div>
+
+<div class="page"/>
+
+<div class="container">
+  <div class="content">
+    <h3>Uruchomiony sterownik</h3>
     <img src="../static/schedule_keepr_running.jpg" alt="Sterownik uruchomiony">
   </div>
 </div>
